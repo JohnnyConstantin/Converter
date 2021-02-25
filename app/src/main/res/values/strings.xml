@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Converter</string>
+    <string name="title_profile">Профиль</string>
+    <string name="title_home">Главная</string>
+    <string name="title_history">История</string>
+    <string name="btn_login">Enter</string>
+    <string name="btn_link_to_register"><u>registration</u></string>
+    <string name="hint_email">Login</string>
+    <string name="hint_password">Password</string>
+</resources>
