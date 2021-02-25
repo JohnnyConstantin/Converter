@@ -1,4 +1,6 @@
 package com.example.converter.ui.history;
 
-public class HistoryFragment {
+import androidx.fragment.app.Fragment;
+
+public class HistoryFragment extends Fragment {
 }
