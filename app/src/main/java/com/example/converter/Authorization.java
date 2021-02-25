@@ -75,7 +75,8 @@ public class Authorization extends Activity {
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent i = new Intent(Authorization.this, Registration.class);
+                startActivity(i);
             }
         });
 
