@@ -6,6 +6,7 @@
     <string name="btn_login">Enter</string>
     <string name="btn_link_to_register"><u>registration</u></string>
     <string name="hint_email">Login</string>
+    <string name="error_in_matches">Passwords doesn\'t match</string>
     <string name="hint_password">Password</string>
     <string name="hint_confirm_password">Confirm Password</string>
     <string name="register_title">Register</string>
