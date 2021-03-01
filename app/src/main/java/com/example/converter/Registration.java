@@ -1,23 +1,19 @@
 package com.example.converter;
 
 import android.graphics.drawable.Drawable;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.util.Properties;
 import android.os.Bundle;
 import android.text.Editable;
-import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
-
-import org.w3c.dom.Text;
-
-import java.util.Objects;
 
 public class Registration extends AppCompatActivity {
     TextInputLayout email_lay, confirm_lay, password_lay;
@@ -26,6 +22,8 @@ public class Registration extends AppCompatActivity {
     EmailValidator emailValidator;
     Drawable drawable;
     boolean IsCorrect;
+    FileInputStream fis;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +44,17 @@ public class Registration extends AppCompatActivity {
 
         emailValidator = new EmailValidator();
 
+        Properties property = new Properties();
+
+        try {
+            fis = new FileInputStream("src/main/res/URLS.properties");
+            String login = property.getProperty("BASE_URL");
+            System.out.println("\n\n" +login+"\n\n");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+
         confirm_text.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -60,7 +69,7 @@ public class Registration extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable s) {
                 if (!s.toString().equals(password_text.getText().toString())){
-                    confirm_lay.setError("Passwords doesn't match");
+                    confirm_lay.setError("Password doesn't match");
             }else
                     confirm_lay.setError(null);
 
@@ -94,7 +103,6 @@ public class Registration extends AppCompatActivity {
 
 
         //todo
-        //Validation login
         //Enabling button pressed while everything is ok
 
         button.setOnClickListener(new View.OnClickListener() {
@@ -102,6 +110,7 @@ public class Registration extends AppCompatActivity {
             public void onClick(View v) {
                 //todo
                 //Send data to server and register
+
             }
         });
 
