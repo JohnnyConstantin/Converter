@@ -30,22 +30,22 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/email_lay"
-            app:helperTextTextAppearance="@anim/fragment_open_exit"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/hint_email"
             android:layout_marginBottom="10dp"
-            android:background="@color/white"
+            android:hint="@string/hint_email"
             android:inputType="textEmailAddress"
             android:singleLine="true"
+            app:boxBackgroundColor="@color/white"
             android:textColor="@color/colorPrimaryDark"
             android:textColorHint="@color/colorPrimaryDark"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            app:helperTextTextAppearance="@anim/fragment_open_exit">
+
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/email_text"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                />
+                android:layout_height="wrap_content" />
         </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -55,13 +55,13 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
-            android:background="@color/white"
             android:hint="@string/hint_password"
             android:inputType="textPassword"
             android:singleLine="true"
+            app:boxBackgroundColor="@color/white"
             android:textColor="@color/colorPrimaryDark"
             android:textColorHint="@color/colorPrimaryDark"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/password_text"
                 android:layout_width="match_parent"
@@ -74,14 +74,14 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
-            android:background="@color/white"
             android:hint="@string/hint_confirm_password"
             android:inputType="textPassword"
+            app:boxBackgroundColor="@color/white"
             android:singleLine="true"
             android:textColor="@color/colorPrimaryDark"
             android:textColorHint="@color/colorPrimaryDark"
             app:errorTextAppearance="@anim/nav_default_pop_exit_anim"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/confirm_password_text"
                 android:layout_width="match_parent"
