@@ -97,7 +97,7 @@
             android:background="@drawable/round_button"
             android:clickable="true"
             android:focusable="true"
-            android:text="@string/register_title"
+            android:text="@string/register_button"
             android:layout_gravity="center_horizontal"
             android:textColor="@color/colorPrimaryDark" />
     </LinearLayout>

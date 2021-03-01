@@ -44,6 +44,8 @@ public class Registration extends AppCompatActivity {
 
         email_lay.setPlaceholderText("Login must be your email");
 
+        emailValidator = new EmailValidator();
+
         confirm_text.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -62,6 +64,31 @@ public class Registration extends AppCompatActivity {
             }else
                     confirm_lay.setError(null);
 
+            }
+        });
+
+        email_text.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                if(emailValidator.validate(s.toString())){
+                    drawable = Registration.this.getResources().getDrawable(R.drawable.ic_check);
+                    email_text.setCompoundDrawablesWithIntrinsicBounds(null,null,drawable,null);
+                    IsCorrect = true;
+                }else{
+                    drawable = getBaseContext().getResources().getDrawable(R.drawable.ic_close);
+                    email_text.setCompoundDrawablesWithIntrinsicBounds(null,null,drawable,null);
+                    IsCorrect = false;
+                }
             }
         });
 

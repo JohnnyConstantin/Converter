@@ -3,11 +3,12 @@
     <string name="title_profile">Профиль</string>
     <string name="title_home">Главная</string>
     <string name="title_history">История</string>
-    <string name="btn_login">Enter</string>
-    <string name="btn_link_to_register"><u>registration</u></string>
+    <string name="btn_login">Log in</string>
+    <string name="btn_link_to_register"><u>Sign up</u></string>
     <string name="hint_email">Login</string>
     <string name="error_in_matches">Passwords doesn\'t match</string>
     <string name="hint_password">Password</string>
     <string name="hint_confirm_password">Confirm Password</string>
-    <string name="register_title">Register</string>
+    <string name="register_title">Registration</string>
+    <string name="register_button">Register</string>
 </resources>
