@@ -95,7 +95,7 @@ public class Registration extends AppCompatActivity {
 
 
         //todo
-        //Enabling button pressed while everything is ok
+        //Enabling button pressed while everything is ok\or make error message if anything is not alright
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
