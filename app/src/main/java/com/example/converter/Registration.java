@@ -2,10 +2,7 @@ package com.example.converter;
 
 import android.graphics.drawable.Drawable;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.util.Properties;
+import java.io.IOException;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -22,8 +19,6 @@ public class Registration extends AppCompatActivity {
     EmailValidator emailValidator;
     Drawable drawable;
     boolean IsCorrect;
-    FileInputStream fis;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,16 +39,13 @@ public class Registration extends AppCompatActivity {
 
         emailValidator = new EmailValidator();
 
-        Properties property = new Properties();
 
         try {
-            fis = new FileInputStream("src/main/res/URLS.properties");
-            String login = property.getProperty("BASE_URL");
-            System.out.println("\n\n" +login+"\n\n");
-        } catch (FileNotFoundException e) {
+            final String BASE_URL = (Util.getProperty("BASE_URL",getApplicationContext()));
+            //Here you can get sensitive vars from config.properties
+        } catch (IOException e) {
             e.printStackTrace();
         }
-
 
         confirm_text.addTextChangedListener(new TextWatcher() {
             @Override
