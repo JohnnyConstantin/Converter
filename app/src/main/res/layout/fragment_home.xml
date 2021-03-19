@@ -45,9 +45,10 @@
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.952">
+        app:layout_constraintVertical_bias="0.778">
 
         <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
             android:id="@+id/card_view1"
@@ -59,10 +60,10 @@
 
             <TextView
                 android:id="@+id/info_text1"
-                android:text="Card"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/colorPrimary"/>
+                android:background="@color/colorPrimary"
+                android:text="Card" />
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
@@ -75,10 +76,10 @@
 
             <TextView
                 android:id="@+id/info_text2"
-                android:text="Card"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/colorPrimary"/>
+                android:background="@color/colorPrimary"
+                android:text="Card" />
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
@@ -91,10 +92,10 @@
 
             <TextView
                 android:id="@+id/info_text3"
-                android:text="Card"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/colorPrimary"/>
+                android:background="@color/colorPrimary"
+                android:text="Card" />
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
@@ -107,10 +108,10 @@
 
             <TextView
                 android:id="@+id/info_text4"
-                android:text="Card"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/colorPrimary"/>
+                android:background="@color/colorPrimary"
+                android:text="Card" />
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
@@ -123,10 +124,10 @@
 
             <TextView
                 android:id="@+id/info_text5"
-                android:text="Card"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/colorPrimary"/>
+                android:background="@color/colorPrimary"
+                android:text="Card" />
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
@@ -139,10 +140,10 @@
 
             <TextView
                 android:id="@+id/info_text6"
-                android:text="Card"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/colorPrimary"/>
+                android:background="@color/colorPrimary"
+                android:text="Card" />
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
@@ -155,10 +156,10 @@
 
             <TextView
                 android:id="@+id/info_text7"
-                android:text="Card"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/colorPrimary"/>
+                android:background="@color/colorPrimary"
+                android:text="Card" />
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
@@ -171,10 +172,10 @@
 
             <TextView
                 android:id="@+id/info_text8"
-                android:text="Card"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/colorPrimary"/>
+                android:background="@color/colorPrimary"
+                android:text="Card" />
         </androidx.cardview.widget.CardView>
 
     </GridLayout>
