@@ -12,11 +12,19 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
+/** Активность регистрации
+ * @author J.C
+ */
+
 public class Registration extends AppCompatActivity {
+    /**Поля ввода данных при регистрации*/
     TextInputLayout email_lay, confirm_lay, password_lay;
     TextInputEditText email_text,confirm_text,password_text;
+    /** Кнопка регистрации */
     Button button;
+    /** Валидатор почты */
     EmailValidator emailValidator;
+    /** Изображение валидности логина */
     Drawable drawable;
     boolean IsCorrect;
 
@@ -38,7 +46,6 @@ public class Registration extends AppCompatActivity {
         email_lay.setPlaceholderText("Login must be your email");
 
         emailValidator = new EmailValidator();
-
 
         try {
             final String BASE_URL = (Util.getProperty("BASE_URL",getApplicationContext()));
