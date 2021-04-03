@@ -14,13 +14,19 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
+/**
+ * Активность авторизации
+ * @author Vadim
+ */
 public class Authorization extends Activity {
 
+    /** Поля логина и пароля */
     EditText editText1,editText2;
-    TextView textView;
+    /** Кнопки логина и регистрации */
     Button button1,button2;
+    /** Валидатор почты */
     EmailValidator emailValidator;
-    String login;
+    /** Изображение валидности логина */
     Drawable drawable;
     boolean IsCorrect;
 
@@ -45,15 +51,20 @@ public class Authorization extends Activity {
 
             }
 
+            /**
+             * Проверка введенного email
+             * c помощью класса EmailValidator
+             * @see     EmailValidator
+             */
             @Override
             public void afterTextChanged(Editable s) {
                 if(emailValidator.validate(s.toString())){
                     drawable = Authorization.this.getResources().getDrawable(R.drawable.ic_check);
-                    editText1.setCompoundDrawablesWithIntrinsicBounds(null,null,drawable,null);
+                    editText1.setCompoundDrawablesWithIntrinsicBounds(null,null, drawable,null);
                     IsCorrect = true;
                 }else{
                     drawable = getBaseContext().getResources().getDrawable(R.drawable.ic_close);
-                    editText1.setCompoundDrawablesWithIntrinsicBounds(null,null,drawable,null);
+                    editText1.setCompoundDrawablesWithIntrinsicBounds(null,null, drawable,null);
                     IsCorrect = false;
                 }
             }

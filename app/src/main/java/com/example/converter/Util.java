@@ -7,7 +7,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
-//Class for accessing config.properties file with sensible data
+/**
+ * Class for accessing config.properties file with sensible data
+ */
 public class Util {
     public static String getProperty(String key,Context context) throws IOException {
         Properties properties = new Properties();;

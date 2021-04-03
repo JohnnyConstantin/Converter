@@ -12,7 +12,10 @@ import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.converter.R;
-
+/**
+ * Фрагмент страницы профиля
+ * @author Vadim
+ */
 public class ProfileFragment extends Fragment {
     @Nullable
     @Override

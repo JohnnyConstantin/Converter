@@ -10,6 +10,11 @@ import android.os.Bundle;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+/**
+ * Главная активность
+ * инициализация навигационного меню
+ * @author Vadim
+ */
 public class MainActivity extends AppCompatActivity {
 
     @Override

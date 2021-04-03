@@ -12,7 +12,10 @@ import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.converter.R;
-
+/**
+ * Фрагмент страницы с историей
+ * @author Vadim
+ */
 public class HistoryFragment extends Fragment {
 
     @Nullable

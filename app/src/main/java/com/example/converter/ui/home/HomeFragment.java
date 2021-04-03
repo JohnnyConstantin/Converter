@@ -19,6 +19,10 @@ import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnima
 import com.smarteist.autoimageslider.SliderAnimations;
 import com.smarteist.autoimageslider.SliderView;
 
+/**
+ * Фрагмент главной страницы
+ * @author Vadim
+ */
 public class HomeFragment extends Fragment {
 
     @Nullable
@@ -26,7 +30,6 @@ public class HomeFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View fragmentLayout = inflater.inflate(R.layout.fragment_home, container, false);
         NavController navController = NavHostFragment.findNavController(this);
-
         SliderView sliderView = fragmentLayout.findViewById(R.id.imageSlider);
 
         SliderAdapter adapter = new SliderAdapter(getContext());
