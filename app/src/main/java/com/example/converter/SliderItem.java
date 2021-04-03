@@ -1,7 +1,7 @@
 package com.example.converter;
 
 /**
- * РљР»Р°СЃСЃ СЌР»РµРјРµРЅС‚Р° СЃР»Р°Р№РґРµСЂР°
+ * Класс элемента слайдера
  * @author Vadim
  */
 public class SliderItem {

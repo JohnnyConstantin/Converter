@@ -15,18 +15,18 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 
 /**
- * РђРєС‚РёРІРЅРѕСЃС‚СЊ Р°РІС‚РѕСЂРёР·Р°С†РёРё
+ * Активность авторизации
  * @author Vadim
  */
 public class Authorization extends Activity {
 
-    /** РџРѕР»СЏ Р»РѕРіРёРЅР° Рё РїР°СЂРѕР»СЏ */
+    /** Поля логина и пароля */
     EditText editText1,editText2;
-    /** РљРЅРѕРїРєРё Р»РѕРіРёРЅР° Рё СЂРµРіРёСЃС‚СЂР°С†РёРё */
+    /** Кнопки логина и регистрации */
     Button button1,button2;
-    /** Р’Р°Р»РёРґР°С‚РѕСЂ РїРѕС‡С‚С‹ */
+    /** Валидатор почты */
     EmailValidator emailValidator;
-    /** РР·РѕР±СЂР°Р¶РµРЅРёРµ РІР°Р»РёРґРЅРѕСЃС‚Рё Р»РѕРіРёРЅР° */
+    /** Изображение валидности логина */
     Drawable drawable;
     boolean IsCorrect;
 
@@ -52,8 +52,8 @@ public class Authorization extends Activity {
             }
 
             /**
-             * РџСЂРѕРІРµСЂРєР° РІРІРµРґРµРЅРЅРѕРіРѕ email
-             * c РїРѕРјРѕС‰СЊСЋ РєР»Р°СЃСЃР° EmailValidator
+             * Проверка введенного email
+             * c помощью класса EmailValidator
              * @see     EmailValidator
              */
             @Override
@@ -77,7 +77,7 @@ public class Authorization extends Activity {
                     Intent i = new Intent(Authorization.this,MainActivity.class);
                     startActivity(i);
                 }else{
-                    Toast.makeText(Authorization.this, "Р’РІРµРґРµРЅ РЅРµРєРѕСЂСЂРµРєС‚РЅС‹Р№ Р»РѕРіРёРЅ.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Authorization.this, "Введен некорректный логин.", Toast.LENGTH_SHORT).show();
                 }
 
             }

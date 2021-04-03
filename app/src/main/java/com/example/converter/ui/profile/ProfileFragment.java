@@ -13,7 +13,7 @@ import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.converter.R;
 /**
- * Р¤СЂР°РіРјРµРЅС‚ СЃС‚СЂР°РЅРёС†С‹ РїСЂРѕС„РёР»СЏ
+ * Фрагмент страницы профиля
  * @author Vadim
  */
 public class ProfileFragment extends Fragment {

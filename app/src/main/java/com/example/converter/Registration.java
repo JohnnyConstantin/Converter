@@ -12,19 +12,19 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
-/** РђРєС‚РёРІРЅРѕСЃС‚СЊ СЂРµРіРёСЃС‚СЂР°С†РёРё
+/** Активность регистрации
  * @author J.C
  */
 
 public class Registration extends AppCompatActivity {
-    /**РџРѕР»СЏ РІРІРѕРґР° РґР°РЅРЅС‹С… РїСЂРё СЂРµРіРёСЃС‚СЂР°С†РёРё*/
+    /**Поля ввода данных при регистрации*/
     TextInputLayout email_lay, confirm_lay, password_lay;
     TextInputEditText email_text,confirm_text,password_text;
-    /** РљРЅРѕРїРєР° СЂРµРіРёСЃС‚СЂР°С†РёРё */
+    /** Кнопка регистрации */
     Button button;
-    /** Р’Р°Р»РёРґР°С‚РѕСЂ РїРѕС‡С‚С‹ */
+    /** Валидатор почты */
     EmailValidator emailValidator;
-    /** РР·РѕР±СЂР°Р¶РµРЅРёРµ РІР°Р»РёРґРЅРѕСЃС‚Рё Р»РѕРіРёРЅР° */
+    /** Изображение валидности логина */
     Drawable drawable;
     boolean IsCorrect;
 

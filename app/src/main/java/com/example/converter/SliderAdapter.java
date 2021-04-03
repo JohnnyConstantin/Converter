@@ -14,7 +14,10 @@ import com.smarteist.autoimageslider.SliderViewAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * Класс адаптера слайдера
+ * @author Vadim
+ */
 public class SliderAdapter extends
         SliderViewAdapter<SliderAdapter.SliderAdapterVH> {
 
@@ -58,7 +61,7 @@ public class SliderAdapter extends
 
         Glide.with(viewHolder.itemView)
                 .load(sliderItem.getImageUrl())
-                .centerCrop() // РЅРµ РІС‹СЂР°РІРЅРёРІР°РµС‚СЃСЏ РЅСѓ РёР»Рё РєР°СЂС‚РёРЅРєРё РЅРµ РїРѕРґС…РѕРґСЏС‚
+                .centerCrop() // не выравнивается ну или картинки не подходят
                 .into(viewHolder.imageViewBackground);
 
         viewHolder.itemView.setOnClickListener(new View.OnClickListener() {

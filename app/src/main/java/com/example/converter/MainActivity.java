@@ -11,8 +11,8 @@ import android.os.Bundle;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 /**
- * Р“Р»Р°РІРЅР°СЏ Р°РєС‚РёРІРЅРѕСЃС‚СЊ
- * РёРЅРёС†РёР°Р»РёР·Р°С†РёСЏ РЅР°РІРёРіР°С†РёРѕРЅРЅРѕРіРѕ РјРµРЅСЋ
+ * Главная активность
+ * инициализация навигационного меню
  * @author Vadim
  */
 public class MainActivity extends AppCompatActivity {

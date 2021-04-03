@@ -4,14 +4,14 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * РљР»Р°СЃСЃ РІР°Р»РёРґР°С‚РѕСЂ email
+ * Класс валидатор email
  * @author Vadim
  */
 public class EmailValidator {
 
     private Pattern pattern;
     private Matcher matcher;
-    /** СЂРµРіСѓР»СЏСЂРЅРѕРµ РІС‹СЂР°Р¶РµРЅРёРµ РґР»СЏ email */
+    /** регулярное выражение для email */
     private static final String EMAIL_PATTERN =
             "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@" +
                     "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.(com|ru|net))$";
@@ -20,8 +20,8 @@ public class EmailValidator {
         pattern = Pattern.compile(EMAIL_PATTERN);
     }
 
-    /** РњРµС‚РѕРґ РїСЂРѕРІРµСЂРєРё СЃС‚СЂРѕРєРё РїРѕ СЂРµРіСѓР»СЏСЂРЅРѕРјСѓ РІС‹СЂР°Р¶РµРЅРёСЋ
-     * @param hex РїСЂРѕРІРµСЂСЏРµРјР°СЏ СЃС‚СЂРѕРєР°
+    /** Метод проверки строки по регулярному выражению
+     * @param hex проверяемая строка
      */
     public boolean validate(final String hex) {
         matcher = pattern.matcher(hex);

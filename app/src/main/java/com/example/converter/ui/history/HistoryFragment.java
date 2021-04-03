@@ -13,7 +13,7 @@ import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.converter.R;
 /**
- * Р¤СЂР°РіРјРµРЅС‚ СЃС‚СЂР°РЅРёС†С‹ СЃ РёСЃС‚РѕСЂРёРµР№
+ * Фрагмент страницы с историей
  * @author Vadim
  */
 public class HistoryFragment extends Fragment {
