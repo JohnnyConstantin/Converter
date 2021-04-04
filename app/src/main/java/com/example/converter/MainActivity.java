@@ -23,12 +23,20 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         BottomNavigationView navView = findViewById(R.id.nav_view);
 
+//      Õ≈ “–Œ√¿“‹! «¿√Œ“Œ¬ ¿ ƒÀﬂ œ≈–≈ƒ¿◊» Ã€À¿ Õ¿ ÿ¿œ ” œ–Œ‘»Àﬂ!
+//        Bundle extras = getIntent().getExtras();
+//        if (extras != null) {
+//           String value = extras.getString("Profile_login");
+//        }
+
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.navigation_home, R.id.navigation_profile, R.id.navigation_history)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
+
+
 
     }
 }

@@ -9,6 +9,7 @@ import java.util.Properties;
 
 /**
  * Class for accessing config.properties file with sensible data
+ * @author J.C
  */
 public class Util {
     public static String getProperty(String key,Context context) throws IOException {

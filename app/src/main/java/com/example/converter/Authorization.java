@@ -75,6 +75,10 @@ public class Authorization extends Activity {
             public void onClick(View v) {
                 if(IsCorrect){
                     Intent i = new Intent(Authorization.this,MainActivity.class);
+
+//          НЕ ТРОГАТЬ! ЗАГОТОВКА ДЛЯ ПЕРЕДАЧИ МЫЛА НА ШАПКУ ПРОФИЛЯ!
+//                    i.putExtra("Profile_login", "mail@gmail.com");
+
                     startActivity(i);
                 }else{
                     Toast.makeText(Authorization.this, "Введен некорректный логин.", Toast.LENGTH_SHORT).show();
