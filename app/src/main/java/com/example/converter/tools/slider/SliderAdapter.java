@@ -1,4 +1,4 @@
-package com.example.converter;
+package com.example.converter.tools.slider;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -10,12 +10,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.example.converter.R;
 import com.smarteist.autoimageslider.SliderViewAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
 /**
- * Класс адаптера слайдера
+ * РљР»Р°СЃСЃ Р°РґР°РїС‚РµСЂР° СЃР»Р°Р№РґРµСЂР°
  * @author Vadim
  */
 public class SliderAdapter extends
@@ -61,7 +62,7 @@ public class SliderAdapter extends
 
         Glide.with(viewHolder.itemView)
                 .load(sliderItem.getImageUrl())
-                .centerCrop() // не выравнивается ну или картинки не подходят
+                .centerCrop() // РЅРµ РІС‹СЂР°РІРЅРёРІР°РµС‚СЃСЏ РЅСѓ РёР»Рё РєР°СЂС‚РёРЅРєРё РЅРµ РїРѕРґС…РѕРґСЏС‚
                 .into(viewHolder.imageViewBackground);
 
         viewHolder.itemView.setOnClickListener(new View.OnClickListener() {

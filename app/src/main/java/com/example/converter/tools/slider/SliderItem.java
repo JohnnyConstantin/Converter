@@ -1,7 +1,7 @@
-package com.example.converter;
+package com.example.converter.tools.slider;
 
 /**
- * Класс элемента слайдера
+ * РљР»Р°СЃСЃ СЌР»РµРјРµРЅС‚Р° СЃР»Р°Р№РґРµСЂР°
  * @author Vadim
  */
 public class SliderItem {

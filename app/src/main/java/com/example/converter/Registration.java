@@ -2,29 +2,41 @@ package com.example.converter;
 
 import android.graphics.drawable.Drawable;
 
+import java.io.BufferedOutputStream;
+import java.io.BufferedWriter;
 import java.io.IOException;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.net.HttpURLConnection;
+import java.net.URL;
+
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.converter.tools.EmailValidator;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
-/** Активность регистрации
+
+/** РђРєС‚РёРІРЅРѕСЃС‚СЊ СЂРµРіРёСЃС‚СЂР°С†РёРё
  * @author J.C
  */
 
 public class Registration extends AppCompatActivity {
-    /**Поля ввода данных при регистрации*/
+    /**РџРѕР»СЏ РІРІРѕРґР° РґР°РЅРЅС‹С… РїСЂРё СЂРµРіРёСЃС‚СЂР°С†РёРё*/
     TextInputLayout email_lay, confirm_lay, password_lay;
     TextInputEditText email_text,confirm_text,password_text;
-    /** Кнопка регистрации */
+    /** РљРЅРѕРїРєР° СЂРµРіРёСЃС‚СЂР°С†РёРё */
     Button button;
-    /** Валидатор почты */
+    /** Р’Р°Р»РёРґР°С‚РѕСЂ РїРѕС‡С‚С‹ */
     EmailValidator emailValidator;
-    /** Изображение валидности логина */
+    /** РР·РѕР±СЂР°Р¶РµРЅРёРµ РІР°Р»РёРґРЅРѕСЃС‚Рё Р»РѕРіРёРЅР° */
     Drawable drawable;
     boolean IsCorrect;
 
@@ -104,12 +116,13 @@ public class Registration extends AppCompatActivity {
         //todo
         //Enabling button pressed while everything is ok\or make error message if anything is not alright
 
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //todo
-                //Send data to server and register
-
+                Client c = new Client();
+                Toast t = Toast.makeText(v.getContext(), c.execute(email_text.getText().toString(), password_text.getText().toString()).toString(), Toast.LENGTH_LONG);
+                t.show();
             }
         });
 

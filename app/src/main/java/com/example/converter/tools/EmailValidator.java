@@ -1,17 +1,17 @@
-package com.example.converter;
+package com.example.converter.tools;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Класс валидатор email
+ * РљР»Р°СЃСЃ РІР°Р»РёРґР°С‚РѕСЂ email
  * @author Vadim
  */
 public class EmailValidator {
 
     private Pattern pattern;
     private Matcher matcher;
-    /** регулярное выражение для email */
+    /** СЂРµРіСѓР»СЏСЂРЅРѕРµ РІС‹СЂР°Р¶РµРЅРёРµ РґР»СЏ email */
     private static final String EMAIL_PATTERN =
             "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@" +
                     "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.(com|ru|net))$";
@@ -20,8 +20,8 @@ public class EmailValidator {
         pattern = Pattern.compile(EMAIL_PATTERN);
     }
 
-    /** Метод проверки строки по регулярному выражению
-     * @param hex проверяемая строка
+    /** РњРµС‚РѕРґ РїСЂРѕРІРµСЂРєРё СЃС‚СЂРѕРєРё РїРѕ СЂРµРіСѓР»СЏСЂРЅРѕРјСѓ РІС‹СЂР°Р¶РµРЅРёСЋ
+     * @param hex РїСЂРѕРІРµСЂСЏРµРјР°СЏ СЃС‚СЂРѕРєР°
      */
     public boolean validate(final String hex) {
         matcher = pattern.matcher(hex);

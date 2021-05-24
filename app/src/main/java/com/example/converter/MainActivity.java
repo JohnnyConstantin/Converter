@@ -11,8 +11,8 @@ import android.os.Bundle;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 /**
- * Главная активность
- * инициализация навигационного меню
+ * Р“Р»Р°РІРЅР°СЏ Р°РєС‚РёРІРЅРѕСЃС‚СЊ
+ * РёРЅРёС†РёР°Р»РёР·Р°С†РёСЏ РЅР°РІРёРіР°С†РёРѕРЅРЅРѕРіРѕ РјРµРЅСЋ
  * @author Vadim
  */
 public class MainActivity extends AppCompatActivity {
@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         BottomNavigationView navView = findViewById(R.id.nav_view);
 
-//      НЕ ТРОГАТЬ! ЗАГОТОВКА ДЛЯ ПЕРЕДАЧИ МЫЛА НА ШАПКУ ПРОФИЛЯ!
+//      РќР• РўР РћР“РђРўР¬! Р—РђР“РћРўРћР’РљРђ Р”Р›РЇ РџР•Р Р•Р”РђР§Р РњР«Р›Рђ РќРђ РЁРђРџРљРЈ РџР РћР¤РР›РЇ!
 //        Bundle extras = getIntent().getExtras();
 //        if (extras != null) {
 //           String value = extras.getString("Profile_login");

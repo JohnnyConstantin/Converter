@@ -15,18 +15,18 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 
 /**
- * Активность авторизации
+ * пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
  * @author Vadim
  */
 public class Authorization extends Activity {
 
-    /** Поля логина и пароля */
+    /** пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ */
     EditText editText1,editText2;
-    /** Кнопки логина и регистрации */
+    /** пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
     Button button1,button2;
-    /** Валидатор почты */
+    /** пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ */
     EmailValidator emailValidator;
-    /** Изображение валидности логина */
+    /** пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ */
     Drawable drawable;
     boolean IsCorrect;
 
@@ -52,8 +52,8 @@ public class Authorization extends Activity {
             }
 
             /**
-             * Проверка введенного email
-             * c помощью класса EmailValidator
+             * пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ email
+             * c пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ EmailValidator
              * @see     EmailValidator
              */
             @Override
@@ -76,12 +76,12 @@ public class Authorization extends Activity {
                 if(IsCorrect){
                     Intent i = new Intent(Authorization.this,MainActivity.class);
 
-//          НЕ ТРОГАТЬ! ЗАГОТОВКА ДЛЯ ПЕРЕДАЧИ МЫЛА НА ШАПКУ ПРОФИЛЯ!
+//          пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ! пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ!
 //                    i.putExtra("Profile_login", "mail@gmail.com");
 
                     startActivity(i);
                 }else{
-                    Toast.makeText(Authorization.this, "Введен некорректный логин.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Authorization.this, "пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ.", Toast.LENGTH_SHORT).show();
                 }
 
             }
