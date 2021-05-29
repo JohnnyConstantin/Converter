@@ -9,7 +9,7 @@ import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class Client  extends AsyncTask<String, String, String> {
+public class HttpClient extends AsyncTask<String, String, String> {
     private String urlString = "https://converter-se-course.herokuapp.com";
 
     public String get(String location){
@@ -49,12 +49,9 @@ public class Client  extends AsyncTask<String, String, String> {
 
             urlConnection.connect();
 
-            System.out.println(urlConnection.getResponseCode());
-
-            InputStream in = urlConnection.getErrorStream();
+            InputStream in = urlConnection.getInputStream();
 
             os.close();
-//            System.out.println(convertStreamToString(in));
             return convertStreamToString(in);
 
         } catch (Exception e) {
@@ -93,17 +90,7 @@ public class Client  extends AsyncTask<String, String, String> {
                 e.printStackTrace();
             }
         }
-        System.out.println(sb.toString());
-        try {
-            is.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
         return sb.toString();
     }
 
-//    @Override
-//    protected void onPostExecute(String s) {
-//        System.out.println(s);
-//    }
 }

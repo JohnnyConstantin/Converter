@@ -80,19 +80,20 @@ public class Authorization extends Activity {
             @Override
             public void onClick(View v) {
                 if(IsCorrect){
-                    Client c = new Client();
+                    HttpClient c = new HttpClient();
                     String response = null;
                     Map<String, String> data = new HashMap<>();
                     data.put("login", login_edText.getText().toString());
                     data.put("password", password_edText.getText().toString());
                     try {
                         response = c.execute("POST", "/login", data.toString()).get();
+
                     } catch (ExecutionException e) {
                         e.printStackTrace();
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
-                    System.out.println(response);
+
 //                    Intent i = new Intent(Authorization.this,MainActivity.class);
 
 //          Õ≈ “–Œ√¿“‹! «¿√Œ“Œ¬ ¿ ƒÀﬂ œ≈–≈ƒ¿◊» Ã€À¿ Õ¿ ÿ¿œ ” œ–Œ‘»Àﬂ!
@@ -100,7 +101,7 @@ public class Authorization extends Activity {
 
 //                    startActivity(i);
                 }else{
-                    Toast.makeText(Authorization.this, "?????? ???????????? ?????.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Authorization.this, "¬‚Â‰ÂÌ ÌÂÍÓÂÍÚÌ˚È ÎÓ„ËÌ.", Toast.LENGTH_SHORT).show();
                 }
 
             }

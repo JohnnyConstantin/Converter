@@ -2,13 +2,7 @@ package com.example.converter;
 
 import android.graphics.drawable.Drawable;
 
-import java.io.BufferedOutputStream;
-import java.io.BufferedWriter;
 import java.io.IOException;
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -17,7 +11,6 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -122,7 +115,7 @@ public class Registration extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Client c = new Client();
+                HttpClient c = new HttpClient();
                 Map<String, String> data = new HashMap<>();
                 data.put("login", email_text.getText().toString());
                 data.put("password", password_text.getText().toString());
