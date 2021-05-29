@@ -1,19 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/converter/Authorization.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/converter/Authorization.java" charset="windows-1251" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/converter/MainActivity.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/converter/Registration.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/converter/tools/EmailValidator.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/converter/tools/EmailValidator.java" charset="windows-1251" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/converter/tools/slider/SliderAdapter.java" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/converter/tools/slider/SliderAdapter.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/converter/tools/slider/SliderAdapter.java" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/converter/tools/slider/SliderItem.java" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/converter/tools/slider/SliderItem.java" charset="windows-1251" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/converter/tools/slider/SliderItem.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/converter/ui/history/HistoryFragment.java" charset="windows-1251" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/converter/ui/home/HomeFragment.java" charset="windows-1251" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/example/converter/ui/profile/ProfileFragment.java" charset="windows-1251" />
+    <file url="PROJECT" charset="windows-1251" />
   </component>
 </project>

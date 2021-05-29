@@ -9,24 +9,29 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
+import com.example.converter.tools.EmailValidator;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.ExecutionException;
+
 /**
- * пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+ * Активность авторизации
  * @author Vadim
  */
 public class Authorization extends Activity {
 
-    /** пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ */
-    EditText editText1,editText2;
-    /** пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ */
-    Button button1,button2;
-    /** пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ */
+    /** Поля логина и пароля */
+    EditText login_edText, password_edText;
+    /** Кнопки логина и регистрации */
+    Button login_button,registration_button;
+    /** Валидатор почты */
     EmailValidator emailValidator;
-    /** пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ */
+    /** Изображение валидности логина */
     Drawable drawable;
     boolean IsCorrect;
 
@@ -34,13 +39,14 @@ public class Authorization extends Activity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.authorization);
-        button1 = (Button) findViewById(R.id.btnLogin);
-        button2 = (Button) findViewById(R.id.btnLinkToRegisterScreen);
+        login_button = (Button) findViewById(R.id.btnLogin);
+        registration_button = (Button) findViewById(R.id.btnLinkToRegisterScreen);
         emailValidator = new EmailValidator();
-        editText1 = (EditText) findViewById(R.id.email);
+        login_edText = (EditText) findViewById(R.id.email);
+        password_edText = (EditText) findViewById(R.id.password);
 
 
-        editText1.addTextChangedListener(new TextWatcher() {
+        login_edText.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -50,46 +56,60 @@ public class Authorization extends Activity {
             public void onTextChanged(CharSequence s, int start, int before, int count) {
 
             }
-
+            
             /**
-             * пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ email
-             * c пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ EmailValidator
+             * Проверка введенного email
+             * c помощью класса EmailValidator
              * @see     EmailValidator
              */
             @Override
             public void afterTextChanged(Editable s) {
                 if(emailValidator.validate(s.toString())){
                     drawable = Authorization.this.getResources().getDrawable(R.drawable.ic_check);
-                    editText1.setCompoundDrawablesWithIntrinsicBounds(null,null, drawable,null);
+                    login_edText.setCompoundDrawablesWithIntrinsicBounds(null,null, drawable,null);
                     IsCorrect = true;
                 }else{
                     drawable = getBaseContext().getResources().getDrawable(R.drawable.ic_close);
-                    editText1.setCompoundDrawablesWithIntrinsicBounds(null,null, drawable,null);
+                    login_edText.setCompoundDrawablesWithIntrinsicBounds(null,null, drawable,null);
                     IsCorrect = false;
                 }
             }
         });
 
-        button1.setOnClickListener(new View.OnClickListener() {
+        login_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(IsCorrect){
-                    Intent i = new Intent(Authorization.this,MainActivity.class);
+                    Client c = new Client();
+                    String response = null;
+                    Map<String, String> data = new HashMap<>();
+                    data.put("login", login_edText.getText().toString());
+                    data.put("password", password_edText.getText().toString());
+                    try {
+                        response = c.execute("POST", "/login", data.toString()).get();
+                    } catch (ExecutionException e) {
+                        e.printStackTrace();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    System.out.println(response);
+//                    Intent i = new Intent(Authorization.this,MainActivity.class);
 
-//          пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ! пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ!
+//          НЕ ТРОГАТЬ! ЗАГОТОВКА ДЛЯ ПЕРЕДАЧИ МЫЛА НА ШАПКУ ПРОФИЛЯ!
 //                    i.putExtra("Profile_login", "mail@gmail.com");
 
-                    startActivity(i);
+//                    startActivity(i);
                 }else{
-                    Toast.makeText(Authorization.this, "пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Authorization.this, "?????? ???????????? ?????.", Toast.LENGTH_SHORT).show();
                 }
 
             }
         });
 
-        button2.setOnClickListener(new View.OnClickListener() {
+        registration_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Intent i = new Intent(Authorization.this, Registration.class);
                 startActivity(i);
             }

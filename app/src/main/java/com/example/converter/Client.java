@@ -1,48 +1,61 @@
 package com.example.converter;
 
-import android.content.Context;
 import android.os.AsyncTask;
-import android.widget.Toast;
-
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
-import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class Client  extends AsyncTask<String, String, String> {
+    private String urlString = "https://converter-se-course.herokuapp.com";
 
-    public String register(String... params){
-        String urlString = " https://converter-se-course.herokuapp.com";
-        String data = "{login: " + params[0] +
-                ", password: " + params[1] + "}"; //data to post
-        OutputStream out = null;
-
+    public String get(String location){
         try {
-
-            URL url = new URL(urlString + "/register");
+            URL url = new URL(urlString + location);
             HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
-            urlConnection.setRequestMethod("POST");
-            out = new BufferedOutputStream(urlConnection.getOutputStream());
-
-            BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(out, "UTF-8"));
-            writer.write(data);
-            writer.flush();
-            writer.close();
-            out.close();
+            urlConnection.setRequestMethod("GET");
+            urlConnection.setDoInput(true);
 
             urlConnection.connect();
 
+            InputStream in = urlConnection.getInputStream();
 
-            String responseData = convertStreamToString(out);
+            return convertStreamToString(in);
 
-            return responseData;
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return null;
+    }
+
+    public String post(String location, String data){
+
+        OutputStream out = null;
+
+        try {
+            URL url = new URL(urlString + location);
+            HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
+            urlConnection.setRequestProperty("Content-Type", "application/json");
+            urlConnection.setRequestMethod("POST");
+            urlConnection.setDoOutput(true);
+            urlConnection.setDoInput(true);
+
+            OutputStream os = urlConnection.getOutputStream();
+            os.write(data.getBytes());
+
+
+            urlConnection.connect();
+
+            System.out.println(urlConnection.getResponseCode());
+
+            InputStream in = urlConnection.getErrorStream();
+
+            os.close();
+//            System.out.println(convertStreamToString(in));
+            return convertStreamToString(in);
 
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -52,9 +65,14 @@ public class Client  extends AsyncTask<String, String, String> {
 
     @Override
     protected String doInBackground(String... strings) {
-        return this.register(strings);
+        if(strings[0].equals("POST")) {
+            return this.post(strings[1], strings[2]);
+        }
+        else if (strings[0].equals("GET")){
+            return this.get(strings[1]);
+        }
+        return null;
     }
-
 
     public String convertStreamToString(InputStream is) {
 
@@ -64,7 +82,7 @@ public class Client  extends AsyncTask<String, String, String> {
         String line = null;
         try {
             while ((line = reader.readLine()) != null) {
-                sb.append((line + "\n"));
+                sb.append(line).append("\n");
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -75,6 +93,17 @@ public class Client  extends AsyncTask<String, String, String> {
                 e.printStackTrace();
             }
         }
+        System.out.println(sb.toString());
+        try {
+            is.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         return sb.toString();
     }
+
+//    @Override
+//    protected void onPostExecute(String s) {
+//        System.out.println(s);
+//    }
 }

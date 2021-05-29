@@ -9,6 +9,8 @@ import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
 
 import android.os.Bundle;
 import android.text.Editable;
@@ -121,8 +123,10 @@ public class Registration extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Client c = new Client();
-                Toast t = Toast.makeText(v.getContext(), c.execute(email_text.getText().toString(), password_text.getText().toString()).toString(), Toast.LENGTH_LONG);
-                t.show();
+                Map<String, String> data = new HashMap<>();
+                data.put("login", email_text.getText().toString());
+                data.put("password", password_text.getText().toString());
+                c.execute("POST", "/register", data.toString());
             }
         });
 
