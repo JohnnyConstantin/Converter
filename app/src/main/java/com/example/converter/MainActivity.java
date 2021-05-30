@@ -8,6 +8,9 @@ import androidx.navigation.ui.NavigationUI;
 
 import android.os.Bundle;
 
+import com.example.converter.ui.history.HistoryFragment;
+import com.example.converter.ui.home.HomeFragment;
+import com.example.converter.ui.profile.ProfileFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 /**
@@ -23,11 +26,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         BottomNavigationView navView = findViewById(R.id.nav_view);
 
-//      НЕ ТРОГАТЬ! ЗАГОТОВКА ДЛЯ ПЕРЕДАЧИ МЫЛА НА ШАПКУ ПРОФИЛЯ!
-//        Bundle extras = getIntent().getExtras();
-//        if (extras != null) {
-//           String value = extras.getString("Profile_login");
-//        }
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            ProfileFragment profileFragment = new ProfileFragment();
+            HistoryFragment historyFragment = new HistoryFragment();
+            HomeFragment homeFragment = new HomeFragment();
+
+            profileFragment.setArguments(extras);
+            historyFragment.setArguments(extras);
+            homeFragment.setArguments(extras);
+        }
 
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.navigation_home, R.id.navigation_profile, R.id.navigation_history)

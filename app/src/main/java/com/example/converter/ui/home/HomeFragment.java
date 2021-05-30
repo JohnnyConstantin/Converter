@@ -25,12 +25,8 @@ import com.smarteist.autoimageslider.SliderView;
  */
 public class HomeFragment extends Fragment {
 
-    @Nullable
-    @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View fragmentLayout = inflater.inflate(R.layout.fragment_home, container, false);
-        NavController navController = NavHostFragment.findNavController(this);
-        SliderView sliderView = fragmentLayout.findViewById(R.id.imageSlider);
+    private void sliderSetup(View v){
+        SliderView sliderView = v.findViewById(R.id.imageSlider);
 
         SliderAdapter adapter = new SliderAdapter(getContext());
         SliderItem sliderItem1 = new SliderItem();
@@ -55,6 +51,16 @@ public class HomeFragment extends Fragment {
         sliderView.setScrollTimeInSec(4); //set scroll delay in seconds :
         sliderView.startAutoCycle();
 
+    }
+
+    @Nullable
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View fragmentLayout = inflater.inflate(R.layout.fragment_home, container, false);
+        NavController navController = NavHostFragment.findNavController(this);
+
+        Bundle args = getArguments();
+        sliderSetup(fragmentLayout);
 
         return fragmentLayout;
     }

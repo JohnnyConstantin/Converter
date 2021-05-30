@@ -81,25 +81,34 @@ public class Authorization extends Activity {
             public void onClick(View v) {
                 if(IsCorrect){
                     HttpClient c = new HttpClient();
-                    String response = null;
+                    int user_id = -1;
                     Map<String, String> data = new HashMap<>();
                     data.put("login", login_edText.getText().toString());
                     data.put("password", password_edText.getText().toString());
                     try {
-                        response = c.execute("POST", "/login", data.toString()).get();
-
+                        String response = c.execute("POST", "/login", data.toString()).get();
+                        if(!response.contains("Wrong")){
+                            user_id = Integer.parseInt(response);
+                        }
                     } catch (ExecutionException e) {
                         e.printStackTrace();
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
 
-//                    Intent i = new Intent(Authorization.this,MainActivity.class);
+                    if(user_id != -1){
+                        Intent i = new Intent(Authorization.this,MainActivity.class);
+                        i.putExtra("p_login", data.get("login"));
+                        i.putExtra("user_id", user_id);
 
-//          НЕ ТРОГАТЬ! ЗАГОТОВКА ДЛЯ ПЕРЕДАЧИ МЫЛА НА ШАПКУ ПРОФИЛЯ!
-//                    i.putExtra("Profile_login", "mail@gmail.com");
+                        startActivity(i);
+                    }
+                    else {
+                        Toast.makeText(Authorization.this, "Некорректный логин или пароль.", Toast.LENGTH_SHORT).show();
+                        password_edText.setText("");
+                    }
 
-//                    startActivity(i);
+
                 }else{
                     Toast.makeText(Authorization.this, "Введен некорректный логин.", Toast.LENGTH_SHORT).show();
                 }
@@ -110,7 +119,6 @@ public class Authorization extends Activity {
         registration_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 Intent i = new Intent(Authorization.this, Registration.class);
                 startActivity(i);
             }

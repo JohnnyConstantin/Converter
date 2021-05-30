@@ -10,9 +10,12 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 import androidx.fragment.app.ListFragment;
 
+import com.example.converter.HttpClient;
 import com.example.converter.R;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Фрагмент страницы с историей
@@ -21,6 +24,16 @@ import java.util.ArrayList;
 public class HistoryFragment extends ListFragment {
 
     final ArrayList<ArrayList<String>> dealings = new ArrayList<>();
+
+    public String searchHistory(String date, String cur1, String cur2){
+        HttpClient c = new HttpClient();
+        Map<String, String> data = new HashMap<>();
+        data.put("date", date);
+        data.put("currency1", cur1);
+        data.put("currency2", cur2);
+//        data.put("userId", );
+        return c.post("/search", data.toString());
+    }
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {

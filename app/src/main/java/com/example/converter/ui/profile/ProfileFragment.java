@@ -12,7 +12,11 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 
+import com.example.converter.HttpClient;
 import com.example.converter.R;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Фрагмент страницы профиля
@@ -20,9 +24,19 @@ import com.example.converter.R;
  */
 public class ProfileFragment extends Fragment {
     /**
-     Flag for hiding login in profile head
+     Флаг для сокрытия логина в профиле
      */
     boolean Hidden = false;
+
+    public String makeExchange(String cur1, String cur2){
+        HttpClient c = new HttpClient();
+        Map<String, String> data = new HashMap<>();
+        data.put("currencyFrom", cur1);
+        data.put("currencyTo", cur2);
+        data.put("userId", cur2);
+        data.put("input", cur2);
+        return c.post("/exchange", data.toString());
+    }
 
     @Nullable
     @Override
@@ -33,8 +47,11 @@ public class ProfileFragment extends Fragment {
         ImageView Profile_photo = (ImageView) fragmentLayout.findViewById(R.id.Profile_photo);//<-Dunno what to do with this shit, mb just change its color like VIP and ordinary user
         ImageView Profile_hide = (ImageView) fragmentLayout.findViewById(R.id.Profile_hide);
 
+        Bundle args = getArguments();
+        String login = args.getString("login");
+
         //todo need to place in Profile_login mail from authorization
-        Profile_login.append("Justtesting@mail.ru");
+        Profile_login.append(login);
 
 
         //todo hide only substring before @
@@ -46,7 +63,7 @@ public class ProfileFragment extends Fragment {
                 Hidden = true;
             } else{
             Hidden = false;
-            Profile_login.setText("Justtesting@mail.ru");
+            Profile_login.setText(login);
             }
         });
 

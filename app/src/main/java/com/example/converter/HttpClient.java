@@ -9,9 +9,17 @@ import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+/**
+ * Клиент для http запросов
+ * @author Vadim
+ */
 public class HttpClient extends AsyncTask<String, String, String> {
+    /** Поле ресурса обращения */
     private String urlString = "https://converter-se-course.herokuapp.com";
 
+    /** Метод GET запроса
+     * @param location локатор запроса
+     */
     public String get(String location){
         try {
             URL url = new URL(urlString + location);
@@ -31,6 +39,10 @@ public class HttpClient extends AsyncTask<String, String, String> {
         return null;
     }
 
+    /** Метод POST запроса
+     * @param location локатор запроса
+     * @param data тело POST запроса в формате Json
+     */
     public String post(String location, String data){
 
         OutputStream out = null;
@@ -71,6 +83,9 @@ public class HttpClient extends AsyncTask<String, String, String> {
         return null;
     }
 
+    /** Метод перевода потока в строку
+     * @param is поток данных
+     */
     public String convertStreamToString(InputStream is) {
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(is));
@@ -92,5 +107,4 @@ public class HttpClient extends AsyncTask<String, String, String> {
         }
         return sb.toString();
     }
-
 }
