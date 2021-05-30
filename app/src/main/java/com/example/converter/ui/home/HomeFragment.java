@@ -3,8 +3,12 @@ package com.example.converter.ui.home;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -12,18 +16,84 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 
+import com.example.converter.HttpClient;
 import com.example.converter.R;
 import com.example.converter.tools.slider.SliderAdapter;
 import com.example.converter.tools.slider.SliderItem;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType;
 import com.smarteist.autoimageslider.SliderAnimations;
 import com.smarteist.autoimageslider.SliderView;
+
+import java.util.Map;
+
 
 /**
  * Фрагмент главной страницы
  * @author Vadim
  */
 public class HomeFragment extends Fragment {
+
+
+
+    @Nullable
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View fragmentLayout = inflater.inflate(R.layout.fragment_home, container, false);
+        NavController navController = NavHostFragment.findNavController(this);
+
+        TextView usdCard = container.findViewById(R.id.info_text1);
+        TextView eurCard = container.findViewById(R.id.info_text2);
+        TextView audCard = container.findViewById(R.id.info_text3);
+        TextView gbpCard = container.findViewById(R.id.info_text4);
+        TextView jpyCard = container.findViewById(R.id.info_text5);
+        TextView cadCard = container.findViewById(R.id.info_text6);
+        TextView hkdCard = container.findViewById(R.id.info_text7);
+        TextView chfCard = container.findViewById(R.id.info_text8);
+
+        MenuItem refresh = container.findViewById(R.id.refresh);
+        refresh.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                updateCurrencies();
+                return false;
+            }
+        });
+
+//        Bundle args = getArguments();
+        sliderSetup(fragmentLayout);
+        updateCurrencies();
+
+
+        return fragmentLayout;
+    }
+
+    @Override
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+        inflater.inflate(R.menu.home_menu, menu);
+        super.onCreateOptionsMenu(menu, inflater);
+    }
+
+    public String getCurrencies(){
+        HttpClient c = new HttpClient();
+        return c.get("/getAllCurrencies");
+    }
+
+    public void updateCurrencies(){
+        String response = getCurrencies();
+        try {
+            ObjectMapper mapper = new ObjectMapper();
+            String[] currs = mapper.readValue(response, String[].class);
+
+            Map<String,Object> result =
+                    mapper.readValue(currs[0], Map.class);
+//            result.get();
+            System.out.println(result.toString());
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
+    }
 
     private void sliderSetup(View v){
         SliderView sliderView = v.findViewById(R.id.imageSlider);
@@ -53,15 +123,4 @@ public class HomeFragment extends Fragment {
 
     }
 
-    @Nullable
-    @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View fragmentLayout = inflater.inflate(R.layout.fragment_home, container, false);
-        NavController navController = NavHostFragment.findNavController(this);
-
-        Bundle args = getArguments();
-        sliderSetup(fragmentLayout);
-
-        return fragmentLayout;
-    }
 }

@@ -41,33 +41,38 @@ public class ProfileFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+
         View fragmentLayout = inflater.inflate(R.layout.fragment_profile, container, false);
         NavController navController = NavHostFragment.findNavController(this);
         TextView Profile_login = (TextView) fragmentLayout.findViewById(R.id.Profile_login);
         ImageView Profile_photo = (ImageView) fragmentLayout.findViewById(R.id.Profile_photo);//<-Dunno what to do with this shit, mb just change its color like VIP and ordinary user
         ImageView Profile_hide = (ImageView) fragmentLayout.findViewById(R.id.Profile_hide);
+        String login = "None";
+        String userId = null;
+
 
         Bundle args = getArguments();
-        String login = args.getString("login");
+        if(args != null){
+            login = args.getString("login");
+            userId = args.getString("userId");
+        }
 
-        //todo need to place in Profile_login mail from authorization
         Profile_login.append(login);
-
 
         //todo hide only substring before @
         //todo add animation for hiding image
         //Hiding login when image is pressed
+        String finalLogin = login;
         Profile_hide.setOnClickListener(v -> {
             if(!Hidden){
                 Profile_login.setText("hidden");
                 Hidden = true;
             } else{
-            Hidden = false;
-            Profile_login.setText(login);
+                Hidden = false;
+                Profile_login.setText(finalLogin);
             }
         });
 
-        //todo ID(get it from db)
         //todo changing mail
         //todo changing password
         //todo favorite pairs

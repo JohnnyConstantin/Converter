@@ -1,5 +1,6 @@
 package com.example.converter.ui.history;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -25,19 +26,10 @@ public class HistoryFragment extends ListFragment {
 
     final ArrayList<ArrayList<String>> dealings = new ArrayList<>();
 
-    public String searchHistory(String date, String cur1, String cur2){
-        HttpClient c = new HttpClient();
-        Map<String, String> data = new HashMap<>();
-        data.put("date", date);
-        data.put("currency1", cur1);
-        data.put("currency2", cur2);
-//        data.put("userId", );
-        return c.post("/search", data.toString());
-    }
-
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        Bundle args = getArguments();
 
 //        dealings.add(new ArrayList<String>());
 //        dealings.get(0).add("2021-02-25");
@@ -47,6 +39,7 @@ public class HistoryFragment extends ListFragment {
 //        dealings.get(1).add("2021-02-25");
 //        dealings.get(1).add("USDT/RUB");
 //        dealings.get(1).add("1000/75400");
+        String response = getHistory(args.getString("userId"));
 
         MyListAdapter myListAdapter = new MyListAdapter(getActivity(),
                 R.layout.listfragment_row, dealings);
@@ -70,7 +63,7 @@ public class HistoryFragment extends ListFragment {
 
             LayoutInflater inflater = (LayoutInflater) mContext
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            View row = inflater.inflate(R.layout.listfragment_row, parent,
+            @SuppressLint("ViewHolder") View row = inflater.inflate(R.layout.listfragment_row, parent,
                     false);
 
             TextView dateTextView = (TextView) row.findViewById(R.id.date);
@@ -84,5 +77,22 @@ public class HistoryFragment extends ListFragment {
             return row;
         }
 
+    }
+
+    public String searchHistory(String date, String cur1, String cur2, String userId){
+        HttpClient c = new HttpClient();
+        Map<String, String> data = new HashMap<>();
+        data.put("date", date);
+        data.put("currency1", cur1);
+        data.put("currency2", cur2);
+        data.put("userId", userId);
+        return c.post("/search", data.toString());
+    }
+
+    public String getHistory(String userId){
+        HttpClient c = new HttpClient();
+        Map<String, String> data = new HashMap<>();
+        data.put("userId", userId);
+        return c.post("/history", data.toString());
     }
 }
