@@ -23,6 +23,15 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class MainActivity extends AppCompatActivity {
     private String userId;
     private String login;
+    private String[] curs = null;
+
+    public String[] getCurs() {
+        return curs;
+    }
+
+    public void setCurs(String[] curs) {
+        this.curs = curs;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
