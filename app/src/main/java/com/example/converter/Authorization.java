@@ -81,14 +81,14 @@ public class Authorization extends Activity {
             public void onClick(View v) {
                 if(IsCorrect){
                     HttpClient c = new HttpClient();
-                    int userId = -1;
+                    String userId = "";
                     Map<String, String> data = new HashMap<>();
                     data.put("login", login_edText.getText().toString());
                     data.put("password", password_edText.getText().toString());
                     try {
                         String response = c.execute("POST", "/login", data.toString()).get();
                         if(!response.contains("Wrong")){
-                            userId = Integer.parseInt(response);
+                            userId = response;
                         }
                     } catch (ExecutionException e) {
                         e.printStackTrace();
@@ -96,7 +96,7 @@ public class Authorization extends Activity {
                         e.printStackTrace();
                     }
 
-                    if(userId != -1){
+                    if(!userId.equals("")){
                         Intent i = new Intent(Authorization.this,MainActivity.class);
                         i.putExtra("p_login", data.get("login"));
                         i.putExtra("userId", userId);

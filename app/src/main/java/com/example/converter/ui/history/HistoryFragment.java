@@ -30,6 +30,7 @@ public class HistoryFragment extends ListFragment {
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         Bundle args = getArguments();
+//        System.out.println(args.getString("userId"));
 
 //        dealings.add(new ArrayList<String>());
 //        dealings.get(0).add("2021-02-25");
@@ -39,7 +40,7 @@ public class HistoryFragment extends ListFragment {
 //        dealings.get(1).add("2021-02-25");
 //        dealings.get(1).add("USDT/RUB");
 //        dealings.get(1).add("1000/75400");
-        String response = getHistory(args.getString("userId"));
+//        String response = getHistory(args.getString("userId"));
 
         MyListAdapter myListAdapter = new MyListAdapter(getActivity(),
                 R.layout.listfragment_row, dealings);

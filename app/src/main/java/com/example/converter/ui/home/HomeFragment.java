@@ -26,7 +26,12 @@ import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnima
 import com.smarteist.autoimageslider.SliderAnimations;
 import com.smarteist.autoimageslider.SliderView;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.Map;
+import java.util.concurrent.ExecutionException;
 
 
 /**
@@ -52,18 +57,18 @@ public class HomeFragment extends Fragment {
         TextView hkdCard = container.findViewById(R.id.info_text7);
         TextView chfCard = container.findViewById(R.id.info_text8);
 
-        MenuItem refresh = container.findViewById(R.id.refresh);
-        refresh.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
-            @Override
-            public boolean onMenuItemClick(MenuItem item) {
-                updateCurrencies();
-                return false;
-            }
-        });
+//        MenuItem refresh = container.findViewById(R.id.refresh);
+//        refresh.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+//            @Override
+//            public boolean onMenuItemClick(MenuItem item) {
+//                return updateCurrencies();
+//            }
+//        });
 
 //        Bundle args = getArguments();
         sliderSetup(fragmentLayout);
         updateCurrencies();
+
 
 
         return fragmentLayout;
@@ -75,24 +80,30 @@ public class HomeFragment extends Fragment {
         super.onCreateOptionsMenu(menu, inflater);
     }
 
-    public String getCurrencies(){
+    public String getCurrencies() {
         HttpClient c = new HttpClient();
-        return c.get("/getAllCurrencies");
-    }
-
-    public void updateCurrencies(){
-        String response = getCurrencies();
         try {
-            ObjectMapper mapper = new ObjectMapper();
-            String[] currs = mapper.readValue(response, String[].class);
-
-            Map<String,Object> result =
-                    mapper.readValue(currs[0], Map.class);
-//            result.get();
-            System.out.println(result.toString());
-        } catch (JsonProcessingException e) {
+            return c.execute("GET", "/getAllCurrencies").get();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
+        return null;
+    }
+
+    public boolean updateCurrencies(){
+        String response = getCurrencies();
+        System.out.println(response);
+        JSONArray jsonArray = null;
+        try {
+            jsonArray = new JSONArray(response);
+            System.out.println(jsonArray.get(0));
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        return true;
     }
 
     private void sliderSetup(View v){

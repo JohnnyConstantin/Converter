@@ -26,16 +26,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         BottomNavigationView navView = findViewById(R.id.nav_view);
 
-        Bundle extras = getIntent().getExtras();
-        if (extras != null) {
-            ProfileFragment profileFragment = new ProfileFragment();
-            HistoryFragment historyFragment = new HistoryFragment();
-            HomeFragment homeFragment = new HomeFragment();
-
-            profileFragment.setArguments(extras);
-            historyFragment.setArguments(extras);
-            homeFragment.setArguments(extras);
-        }
+//        Bundle extras = getIntent().getExtras();
+//        if (extras != null) {
+//            ProfileFragment profileFragment = new ProfileFragment();
+//            HistoryFragment historyFragment = new HistoryFragment();
+//            HomeFragment homeFragment = new HomeFragment();
+//
+//            profileFragment.setArguments(extras);
+//            historyFragment.setArguments(extras);
+//            homeFragment.setArguments(extras);
+//        }
 
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.navigation_home, R.id.navigation_profile, R.id.navigation_history)

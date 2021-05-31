@@ -28,7 +28,6 @@ public class HttpClient extends AsyncTask<String, String, String> {
             urlConnection.setDoInput(true);
 
             urlConnection.connect();
-
             InputStream in = urlConnection.getInputStream();
 
             return convertStreamToString(in);

@@ -53,7 +53,7 @@ public class ProfileFragment extends Fragment {
 
         Bundle args = getArguments();
         if(args != null){
-            login = args.getString("login");
+            login = args.getString("p_login");
             userId = args.getString("userId");
         }
 
