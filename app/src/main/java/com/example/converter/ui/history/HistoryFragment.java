@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 import androidx.fragment.app.ListFragment;
@@ -18,8 +17,9 @@ import androidx.navigation.fragment.NavHostFragment;
 import com.example.converter.HttpClient;
 import com.example.converter.MainActivity;
 import com.example.converter.R;
-
 import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -55,19 +55,33 @@ public class HistoryFragment extends ListFragment {
                 R.layout.listfragment_row, dealings);
         setListAdapter(myListAdapter);
 
-        String data = "nothing";
+        JSONArray data = null;
+
         try {
-         data = getHistory(((MainActivity) getActivity()).getUserId());
-        } catch (ExecutionException e) {
+            data = new JSONArray(getHistory(userId));
+        } catch (ExecutionException | JSONException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
 
-        System.out.println(data);
+        try {
+            myListAdapter.;
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
 
+        try {
+            JSONObject json = new JSONObject(data.get(0).toString());
+            String id = json.get("user_id").toString();
+            String from = json.get("currency1").toString();
+            String to = json.get("currency2").toString();
 
-        JSONArray jsonArray = null;
+            System.out.println(id+'\n'+from+'\n'+to);
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
 
     }
 
@@ -136,4 +150,4 @@ public class HistoryFragment extends ListFragment {
 }
 
 //Тестовый json
-//[{"id":45,"user_id":36,"currency1":"AUD(Австралийский доллар)","currency2":"GBP(Фунт стерлингов Соединенного королевства)","value1":31.0,"value2":17.0,"date":"2021-05-31T00:00:00.000+00:00"}]
+//[{"id":45,"user_id":36,"currency1":"AUD(Австралийский доллар)","currency2":"GBP(Фунт стерлингов Соединенного королевства)","value1":31.0,"value2":17.0,"date":"2021-05-31T00:00:00.000+00:00"},{"id":46,"user_id":36,"currency1":"AUD(Австралийский доллар)","currency2":"GBP(Фунт стерлингов Соединенного королевства)","value1":30000.0,"value2":16372.0,"date":"2021-05-31T00:00:00.000+00:00"}]
