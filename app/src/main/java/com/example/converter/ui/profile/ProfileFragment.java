@@ -4,7 +4,10 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -25,9 +28,7 @@ import java.util.Map;
  * @author Vadim
  */
 public class ProfileFragment extends Fragment {
-    /**
-     Flag to hide the login in the profile
-     */
+    /** Flag to hide the login in the profile */
     boolean Hidden = false;
 
     @Nullable
@@ -36,6 +37,11 @@ public class ProfileFragment extends Fragment {
 
         View fragmentLayout = inflater.inflate(R.layout.fragment_profile, container, false);
         TextView Profile_login = (TextView) fragmentLayout.findViewById(R.id.Profile_login);
+        TextView curTo = (TextView) fragmentLayout.findViewById(R.id.cur_to);
+        EditText curFrom = (EditText) fragmentLayout.findViewById(R.id.cur_from);
+        Spinner spinFrom = (Spinner) fragmentLayout.findViewById(R.id.spin_from);
+        Spinner spinTo = (Spinner) fragmentLayout.findViewById(R.id.spin_to);
+        Button button = (Button) fragmentLayout.findViewById(R.id.accept);
         ImageView Profile_hide = (ImageView) fragmentLayout.findViewById(R.id.Profile_hide);
 
         MainActivity m = ((MainActivity) getActivity());
