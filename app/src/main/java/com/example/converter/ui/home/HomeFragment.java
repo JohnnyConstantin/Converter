@@ -82,6 +82,16 @@ public class HomeFragment extends Fragment {
         JSONArray jsonArray = null;
         try {
             jsonArray = new JSONArray(response);
+
+            String[] allCurs = new String[jsonArray.length()];
+            if(((MainActivity) getActivity()).getCurs() == null){
+                for (int i = 0; i < jsonArray.length(); i++) {
+                    JSONObject d = new JSONObject(jsonArray.get(i).toString());
+                    allCurs[i] = (String) d.get("name");
+                }
+                ((MainActivity) getActivity()).setCurs(allCurs);
+            }
+
             setCurInfo(10, jsonArray, (TextView) view.findViewById(R.id.info_text11), (TextView) view.findViewById(R.id.info_text12));// 10
             setCurInfo(11, jsonArray, (TextView) view.findViewById(R.id.info_text21), (TextView) view.findViewById(R.id.info_text22));// 11
             setCurInfo(0, jsonArray, (TextView) view.findViewById(R.id.info_text31), (TextView) view.findViewById(R.id.info_text32));// 0
@@ -90,6 +100,7 @@ public class HomeFragment extends Fragment {
             setCurInfo(14, jsonArray, (TextView) view.findViewById(R.id.info_text61), (TextView) view.findViewById(R.id.info_text62));// 14
             setCurInfo(8, jsonArray, (TextView) view.findViewById(R.id.info_text71), (TextView) view.findViewById(R.id.info_text72));// 8
             setCurInfo(30, jsonArray, (TextView) view.findViewById(R.id.info_text81), (TextView) view.findViewById(R.id.info_text82));// 30
+
         } catch (JSONException e) {
             e.printStackTrace();
         }
