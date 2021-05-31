@@ -10,8 +10,12 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 import androidx.fragment.app.ListFragment;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.converter.HttpClient;
+import com.example.converter.MainActivity;
 import com.example.converter.R;
 
 import java.util.ArrayList;
@@ -25,14 +29,7 @@ import java.util.Map;
 public class HistoryFragment extends ListFragment {
 
     final ArrayList<ArrayList<String>> dealings = new ArrayList<>();
-
-    @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        Bundle args = getArguments();
-//        System.out.println(args.getString("userId"));
-
-//        dealings.add(new ArrayList<String>());
+    //        dealings.add(new ArrayList<String>());
 //        dealings.get(0).add("2021-02-25");
 //        dealings.get(0).add("USDT/RUB");
 //        dealings.get(0).add("10/754");
@@ -40,11 +37,21 @@ public class HistoryFragment extends ListFragment {
 //        dealings.get(1).add("2021-02-25");
 //        dealings.get(1).add("USDT/RUB");
 //        dealings.get(1).add("1000/75400");
-//        String response = getHistory(args.getString("userId"));
+
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+
+        MainActivity m = ((MainActivity) getActivity());
+        String login = m.getLogin();
+        String userId = m.getUserId();
+
 
         MyListAdapter myListAdapter = new MyListAdapter(getActivity(),
                 R.layout.listfragment_row, dealings);
         setListAdapter(myListAdapter);
+
+
     }
 
     public class MyListAdapter extends ArrayAdapter<ArrayList<String>> {

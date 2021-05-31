@@ -14,28 +14,27 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
+import androidx.navigation.NavDestination;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.converter.HttpClient;
+import com.example.converter.MainActivity;
 import com.example.converter.R;
 import com.example.converter.tools.slider.SliderAdapter;
 import com.example.converter.tools.slider.SliderItem;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType;
 import com.smarteist.autoimageslider.SliderAnimations;
 import com.smarteist.autoimageslider.SliderView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
 
 
 /**
- * Фрагмент главной страницы
+ * Р¤СЂР°РіРјРµРЅС‚ РіР»Р°РІРЅРѕР№ СЃС‚СЂР°РЅРёС†С‹
  * @author Vadim
  */
 public class HomeFragment extends Fragment {
@@ -47,7 +46,6 @@ public class HomeFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View fragmentLayout = inflater.inflate(R.layout.fragment_home, container, false);
         NavController navController = NavHostFragment.findNavController(this);
-
         TextView usdCard = container.findViewById(R.id.info_text1);
         TextView eurCard = container.findViewById(R.id.info_text2);
         TextView audCard = container.findViewById(R.id.info_text3);
@@ -57,6 +55,10 @@ public class HomeFragment extends Fragment {
         TextView hkdCard = container.findViewById(R.id.info_text7);
         TextView chfCard = container.findViewById(R.id.info_text8);
 
+        MainActivity m = ((MainActivity) getActivity());
+        String login = m.getLogin();
+        String userId = m.getUserId();
+
 //        MenuItem refresh = container.findViewById(R.id.refresh);
 //        refresh.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
 //            @Override
@@ -65,25 +67,26 @@ public class HomeFragment extends Fragment {
 //            }
 //        });
 
-//        Bundle args = getArguments();
-        sliderSetup(fragmentLayout);
-        updateCurrencies();
 
+        sliderSetup(fragmentLayout);
+//        updateCurrencies();
 
 
         return fragmentLayout;
     }
 
-    @Override
-    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
-        inflater.inflate(R.menu.home_menu, menu);
-        super.onCreateOptionsMenu(menu, inflater);
-    }
+//    @Override
+//    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+//        inflater.inflate(R.menu.home_menu, menu);
+//        super.onCreateOptionsMenu(menu, inflater);
+//    }
 
     public String getCurrencies() {
         HttpClient c = new HttpClient();
         try {
-            return c.execute("GET", "/getAllCurrencies").get();
+            String response = c.execute("GET", "/getAllCurrencies").get();
+            c.cancel(true);
+            return response;
         } catch (ExecutionException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {
@@ -98,6 +101,9 @@ public class HomeFragment extends Fragment {
         JSONArray jsonArray = null;
         try {
             jsonArray = new JSONArray(response);
+//            for (int i = 0; i < jsonArray.length(); i++) {
+//
+//            }
             System.out.println(jsonArray.get(0));
         } catch (JSONException e) {
             e.printStackTrace();

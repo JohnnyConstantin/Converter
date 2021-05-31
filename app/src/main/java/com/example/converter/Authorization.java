@@ -87,6 +87,7 @@ public class Authorization extends Activity {
                     data.put("password", password_edText.getText().toString());
                     try {
                         String response = c.execute("POST", "/login", data.toString()).get();
+                        c.cancel(true);
                         if(!response.contains("Wrong")){
                             userId = response;
                         }
@@ -98,7 +99,7 @@ public class Authorization extends Activity {
 
                     if(!userId.equals("")){
                         Intent i = new Intent(Authorization.this,MainActivity.class);
-                        i.putExtra("p_login", data.get("login"));
+                        i.putExtra("pLogin", data.get("login"));
                         i.putExtra("userId", userId);
 
                         startActivity(i);
