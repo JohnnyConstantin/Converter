@@ -16,7 +16,7 @@ import com.smarteist.autoimageslider.SliderViewAdapter;
 import java.util.ArrayList;
 import java.util.List;
 /**
- * Класс адаптера слайдера
+ * Slider adapter class
  * @author Vadim
  */
 public class SliderAdapter extends

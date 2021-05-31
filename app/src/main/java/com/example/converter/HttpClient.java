@@ -10,15 +10,15 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 /**
- * Клиент для http запросов
+ * Client for http requests
  * @author Vadim
  */
 public class HttpClient extends AsyncTask<String, String, String> {
-    /** Поле ресурса обращения */
+    /** url resource field*/
     private String urlString = "https://converter-se-course.herokuapp.com";
 
-    /** Метод GET запроса
-     * @param location локатор запроса
+    /** GET request method
+     * @param location locator request
      */
     public String get(String location){
         try {
@@ -38,9 +38,9 @@ public class HttpClient extends AsyncTask<String, String, String> {
         return null;
     }
 
-    /** Метод POST запроса
-     * @param location локатор запроса
-     * @param data тело POST запроса в формате Json
+    /** POST request method
+     * @param location locator request
+     * @param data body of POST request in Json format
      */
     public String post(String location, String data){
 
@@ -82,8 +82,8 @@ public class HttpClient extends AsyncTask<String, String, String> {
         return null;
     }
 
-    /** Метод перевода потока в строку
-     * @param is поток данных
+    /** Stream to string conversion method
+     * @param is input stream
      */
     public String convertStreamToString(InputStream is) {
 

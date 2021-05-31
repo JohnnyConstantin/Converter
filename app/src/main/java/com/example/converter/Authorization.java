@@ -20,18 +20,18 @@ import java.util.Map;
 import java.util.concurrent.ExecutionException;
 
 /**
- * Активность авторизации
+ * Authorization activity
  * @author Vadim
  */
 public class Authorization extends Activity {
 
-    /** Поля логина и пароля */
+    /** Login and password fields */
     EditText login_edText, password_edText;
-    /** Кнопки логина и регистрации */
+    /** Login and registration buttons */
     Button login_button,registration_button;
-    /** Валидатор почты */
+    /** Mail validator */
     EmailValidator emailValidator;
-    /** Изображение валидности логина */
+    /** Login validity image */
     Drawable drawable;
     boolean IsCorrect;
 

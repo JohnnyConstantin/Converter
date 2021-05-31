@@ -16,8 +16,8 @@ import com.example.converter.ui.profile.ProfileFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 /**
- * Главная активность
- * инициализация навигационного меню
+ * Main Activity
+ * initialization of the navigation menu
  * @author Vadim
  */
 public class MainActivity extends AppCompatActivity {
@@ -43,10 +43,18 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    /**
+     *
+     * @return
+     */
     public String getUserId() {
         return userId;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getLogin() {
         return login;
     }

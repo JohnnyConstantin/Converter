@@ -19,19 +19,19 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
 
-/** Активность регистрации
+/** Registration activity
  * @author J.C
  */
 
 public class Registration extends AppCompatActivity {
-    /**Поля ввода данных при регистрации*/
+    /**Data entry fields during registration*/
     TextInputLayout email_lay, confirm_lay, password_lay;
     TextInputEditText email_text,confirm_text,password_text;
-    /** Кнопка регистрации */
+    /** Registration button */
     Button button;
-    /** Валидатор почты */
+    /** Mail validator */
     EmailValidator emailValidator;
-    /** Изображение валидности логина */
+    /** Login validity image */
     Drawable drawable;
     boolean IsCorrect;
 

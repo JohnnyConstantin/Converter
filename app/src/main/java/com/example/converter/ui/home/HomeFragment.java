@@ -31,7 +31,7 @@ import java.util.concurrent.ExecutionException;
 
 
 /**
- * Фрагмент главной страницы
+ * Fragment of the home page
  * @author Vadim
  */
 public class HomeFragment extends Fragment {
@@ -55,6 +55,10 @@ public class HomeFragment extends Fragment {
         return fragmentLayout;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getCurrencies() {
         HttpClient c = new HttpClient();
         try {
@@ -69,6 +73,10 @@ public class HomeFragment extends Fragment {
         return null;
     }
 
+    /**
+     *
+     * @param view
+     */
     public void updateCurrencies(View view){
         String response = getCurrencies();
         JSONArray jsonArray = null;
@@ -87,6 +95,14 @@ public class HomeFragment extends Fragment {
         }
     }
 
+    /**
+     *
+     * @param i
+     * @param jsonArray
+     * @param n
+     * @param r
+     * @throws JSONException
+     */
     public void setCurInfo(int i, JSONArray jsonArray, TextView n, TextView r) throws JSONException {
         JSONObject cur = new JSONObject(jsonArray.get(i).toString());
         String name = cur.get("name").toString().split("\\(")[0] + "/RUB";
@@ -95,6 +111,10 @@ public class HomeFragment extends Fragment {
         r.setText(rate);
     }
 
+    /**
+     *
+     * @param v
+     */
     private void sliderSetup(View v){
         SliderView sliderView = v.findViewById(R.id.imageSlider);
 

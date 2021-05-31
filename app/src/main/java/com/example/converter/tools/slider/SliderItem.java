@@ -1,7 +1,7 @@
 package com.example.converter.tools.slider;
 
 /**
- * Класс элемента слайдера
+ * Slider element class
  * @author Vadim
  */
 public class SliderItem {

@@ -23,7 +23,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Фрагмент страницы с историей
+ * Fragment of a page with history
  * @author Vadim
  */
 public class HistoryFragment extends ListFragment {
@@ -87,6 +87,14 @@ public class HistoryFragment extends ListFragment {
 
     }
 
+    /**
+     *
+     * @param date
+     * @param cur1
+     * @param cur2
+     * @param userId
+     * @return
+     */
     public String searchHistory(String date, String cur1, String cur2, String userId){
         HttpClient c = new HttpClient();
         Map<String, String> data = new HashMap<>();
@@ -97,6 +105,11 @@ public class HistoryFragment extends ListFragment {
         return c.post("/search", data.toString());
     }
 
+    /**
+     *
+     * @param userId
+     * @return
+     */
     public String getHistory(String userId){
         HttpClient c = new HttpClient();
         Map<String, String> data = new HashMap<>();

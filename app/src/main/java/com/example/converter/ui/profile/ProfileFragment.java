@@ -21,12 +21,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Фрагмент страницы профиля
+ * Fragment of the profile page
  * @author Vadim
  */
 public class ProfileFragment extends Fragment {
     /**
-     Флаг для сокрытия логина в профиле
+     Flag to hide the login in the profile
      */
     boolean Hidden = false;
 
@@ -55,11 +55,15 @@ public class ProfileFragment extends Fragment {
             }
         });
 
-
-
         return fragmentLayout;
     }
 
+    /**
+     * Currency conversion method
+     * @param cur1 conversion comes from this currency
+     * @param cur2 conversion takes place into this currency
+     * @return returns the response of the http request
+     */
     public String makeExchange(String cur1, String cur2){
         HttpClient c = new HttpClient();
         Map<String, String> data = new HashMap<>();
