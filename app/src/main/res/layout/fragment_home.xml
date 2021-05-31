@@ -58,12 +58,31 @@
             android:layout_margin="@dimen/card_margin"
             card_view:cardCornerRadius="4dp">
 
-            <TextView
-                android:id="@+id/info_text1"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/colorPrimary"
-                android:text="Card" />
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/info_text11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorPrimary"
+                    android:text="Currency"
+                    android:textSize="@dimen/curNameSize"
+                    android:layout_gravity="start"/>
+
+                <TextView
+                    android:id="@+id/info_text12"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:background="@color/colorPrimary"
+                    android:textSize="18dp"
+                    android:text="Card" />
+
+            </LinearLayout>
+
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
@@ -74,12 +93,30 @@
             android:layout_margin="@dimen/card_margin"
             card_view:cardCornerRadius="4dp">
 
-            <TextView
-                android:id="@+id/info_text2"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/colorPrimary"
-                android:text="Card" />
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/info_text21"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorPrimary"
+                    android:text="Currency"
+                    android:textSize="@dimen/curNameSize"
+                    android:layout_gravity="start"/>
+
+                <TextView
+                    android:id="@+id/info_text22"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:background="@color/colorPrimary"
+                    android:textSize="18dp"
+                    android:text="Card" />
+
+            </LinearLayout>
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
@@ -90,12 +127,30 @@
             android:layout_margin="@dimen/card_margin"
             card_view:cardCornerRadius="4dp">
 
-            <TextView
-                android:id="@+id/info_text3"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/colorPrimary"
-                android:text="Card" />
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/info_text31"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorPrimary"
+                    android:text="Currency"
+                    android:textSize="@dimen/curNameSize"
+                    android:layout_gravity="start"/>
+
+                <TextView
+                    android:id="@+id/info_text32"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:background="@color/colorPrimary"
+                    android:textSize="18dp"
+                    android:text="Card" />
+
+            </LinearLayout>
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
@@ -106,12 +161,30 @@
             android:layout_margin="@dimen/card_margin"
             card_view:cardCornerRadius="4dp">
 
-            <TextView
-                android:id="@+id/info_text4"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/colorPrimary"
-                android:text="Card" />
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/info_text41"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorPrimary"
+                    android:text="Currency"
+                    android:textSize="@dimen/curNameSize"
+                    android:layout_gravity="start"/>
+
+                <TextView
+                    android:id="@+id/info_text42"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:background="@color/colorPrimary"
+                    android:textSize="18dp"
+                    android:text="Card" />
+
+            </LinearLayout>
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
@@ -122,12 +195,30 @@
             android:layout_margin="@dimen/card_margin"
             card_view:cardCornerRadius="4dp">
 
-            <TextView
-                android:id="@+id/info_text5"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/colorPrimary"
-                android:text="Card" />
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/info_text51"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorPrimary"
+                    android:text="Currency"
+                    android:textSize="@dimen/curNameSize"
+                    android:layout_gravity="start"/>
+
+                <TextView
+                    android:id="@+id/info_text52"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:background="@color/colorPrimary"
+                    android:textSize="18dp"
+                    android:text="Card" />
+
+            </LinearLayout>
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
@@ -138,12 +229,30 @@
             android:layout_margin="@dimen/card_margin"
             card_view:cardCornerRadius="4dp">
 
-            <TextView
-                android:id="@+id/info_text6"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/colorPrimary"
-                android:text="Card" />
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/info_text61"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorPrimary"
+                    android:text="Currency"
+                    android:textSize="@dimen/curNameSize"
+                    android:layout_gravity="start"/>
+
+                <TextView
+                    android:id="@+id/info_text62"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:background="@color/colorPrimary"
+                    android:textSize="18dp"
+                    android:text="Card" />
+
+            </LinearLayout>
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
@@ -154,12 +263,30 @@
             android:layout_margin="@dimen/card_margin"
             card_view:cardCornerRadius="4dp">
 
-            <TextView
-                android:id="@+id/info_text7"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/colorPrimary"
-                android:text="Card" />
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/info_text71"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorPrimary"
+                    android:text="Currency"
+                    android:textSize="@dimen/curNameSize"
+                    android:layout_gravity="start"/>
+
+                <TextView
+                    android:id="@+id/info_text72"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:background="@color/colorPrimary"
+                    android:textSize="18dp"
+                    android:text="Card" />
+
+            </LinearLayout>
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
@@ -170,12 +297,30 @@
             android:layout_margin="@dimen/card_margin"
             card_view:cardCornerRadius="4dp">
 
-            <TextView
-                android:id="@+id/info_text8"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/colorPrimary"
-                android:text="Card" />
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/info_text81"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorPrimary"
+                    android:text="Currency"
+                    android:textSize="@dimen/curNameSize"
+                    android:layout_gravity="start"/>
+
+                <TextView
+                    android:id="@+id/info_text82"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:background="@color/colorPrimary"
+                    android:textSize="18dp"
+                    android:text="Card" />
+
+            </LinearLayout>
         </androidx.cardview.widget.CardView>
 
     </GridLayout>

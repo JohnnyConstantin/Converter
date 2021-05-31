@@ -3,9 +3,6 @@ package com.example.converter.ui.home;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -14,7 +11,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
-import androidx.navigation.NavDestination;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.converter.HttpClient;
@@ -28,6 +24,7 @@ import com.smarteist.autoimageslider.SliderView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
@@ -46,14 +43,7 @@ public class HomeFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View fragmentLayout = inflater.inflate(R.layout.fragment_home, container, false);
         NavController navController = NavHostFragment.findNavController(this);
-        TextView usdCard = container.findViewById(R.id.info_text1);
-        TextView eurCard = container.findViewById(R.id.info_text2);
-        TextView audCard = container.findViewById(R.id.info_text3);
-        TextView gbpCard = container.findViewById(R.id.info_text4);
-        TextView jpyCard = container.findViewById(R.id.info_text5);
-        TextView cadCard = container.findViewById(R.id.info_text6);
-        TextView hkdCard = container.findViewById(R.id.info_text7);
-        TextView chfCard = container.findViewById(R.id.info_text8);
+
 
         MainActivity m = ((MainActivity) getActivity());
         String login = m.getLogin();
@@ -69,7 +59,7 @@ public class HomeFragment extends Fragment {
 
 
         sliderSetup(fragmentLayout);
-//        updateCurrencies();
+        updateCurrencies(fragmentLayout);
 
 
         return fragmentLayout;
@@ -95,21 +85,30 @@ public class HomeFragment extends Fragment {
         return null;
     }
 
-    public boolean updateCurrencies(){
+    public void updateCurrencies(View view){
         String response = getCurrencies();
-        System.out.println(response);
         JSONArray jsonArray = null;
         try {
             jsonArray = new JSONArray(response);
-//            for (int i = 0; i < jsonArray.length(); i++) {
-//
-//            }
-            System.out.println(jsonArray.get(0));
+            setCurInfo(10, jsonArray, (TextView) view.findViewById(R.id.info_text11), (TextView) view.findViewById(R.id.info_text12));// 10
+            setCurInfo(11, jsonArray, (TextView) view.findViewById(R.id.info_text21), (TextView) view.findViewById(R.id.info_text22));// 11
+            setCurInfo(0, jsonArray, (TextView) view.findViewById(R.id.info_text31), (TextView) view.findViewById(R.id.info_text32));// 0
+            setCurInfo(2, jsonArray, (TextView) view.findViewById(R.id.info_text41), (TextView) view.findViewById(R.id.info_text42));// 2
+            setCurInfo(33, jsonArray, (TextView) view.findViewById(R.id.info_text51), (TextView) view.findViewById(R.id.info_text52));// 33
+            setCurInfo(14, jsonArray, (TextView) view.findViewById(R.id.info_text61), (TextView) view.findViewById(R.id.info_text62));// 14
+            setCurInfo(8, jsonArray, (TextView) view.findViewById(R.id.info_text71), (TextView) view.findViewById(R.id.info_text72));// 8
+            setCurInfo(30, jsonArray, (TextView) view.findViewById(R.id.info_text81), (TextView) view.findViewById(R.id.info_text82));// 30
         } catch (JSONException e) {
             e.printStackTrace();
         }
+    }
 
-        return true;
+    public void setCurInfo(int i, JSONArray jsonArray, TextView n, TextView r) throws JSONException {
+        JSONObject cur = new JSONObject(jsonArray.get(i).toString());
+        String name = cur.get("name").toString().split("\\(")[0] + "/RUB";
+        String rate = cur.get("rate").toString();
+        n.setText(name);
+        r.setText(rate);
     }
 
     private void sliderSetup(View v){
