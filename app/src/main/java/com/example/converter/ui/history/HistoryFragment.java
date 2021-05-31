@@ -1,6 +1,7 @@
 package com.example.converter.ui.history;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -18,9 +19,12 @@ import com.example.converter.HttpClient;
 import com.example.converter.MainActivity;
 import com.example.converter.R;
 
+import org.json.JSONArray;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ExecutionException;
 
 /**
  * Fragment of a page with history
@@ -51,6 +55,19 @@ public class HistoryFragment extends ListFragment {
                 R.layout.listfragment_row, dealings);
         setListAdapter(myListAdapter);
 
+        String data = "nothing";
+        try {
+         data = getHistory(((MainActivity) getActivity()).getUserId());
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println(data);
+
+
+        JSONArray jsonArray = null;
 
     }
 
@@ -110,10 +127,13 @@ public class HistoryFragment extends ListFragment {
      * @param userId
      * @return
      */
-    public String getHistory(String userId){
+    public String getHistory(String userId) throws ExecutionException, InterruptedException {
         HttpClient c = new HttpClient();
         Map<String, String> data = new HashMap<>();
         data.put("userId", userId);
-        return c.post("/history", data.toString());
+        return c.execute("POST", "/converter/history", data.toString()).get();
     }
 }
+
+//Тестовый json
+//[{"id":45,"user_id":36,"currency1":"AUD(Австралийский доллар)","currency2":"GBP(Фунт стерлингов Соединенного королевства)","value1":31.0,"value2":17.0,"date":"2021-05-31T00:00:00.000+00:00"}]
