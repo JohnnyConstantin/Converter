@@ -37,7 +37,6 @@ import java.util.concurrent.ExecutionException;
 public class HomeFragment extends Fragment {
 
 
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -49,27 +48,12 @@ public class HomeFragment extends Fragment {
         String login = m.getLogin();
         String userId = m.getUserId();
 
-//        MenuItem refresh = container.findViewById(R.id.refresh);
-//        refresh.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
-//            @Override
-//            public boolean onMenuItemClick(MenuItem item) {
-//                return updateCurrencies();
-//            }
-//        });
-
-
         sliderSetup(fragmentLayout);
         updateCurrencies(fragmentLayout);
 
 
         return fragmentLayout;
     }
-
-//    @Override
-//    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
-//        inflater.inflate(R.menu.home_menu, menu);
-//        super.onCreateOptionsMenu(menu, inflater);
-//    }
 
     public String getCurrencies() {
         HttpClient c = new HttpClient();

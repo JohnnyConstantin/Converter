@@ -43,7 +43,6 @@ public class ProfileFragment extends Fragment {
         String userId = m.getUserId();
 
         Profile_login.append(login);
-
         Profile_hide.setOnClickListener(v -> {
             if(!Hidden){
                 int len = login.length();
@@ -55,6 +54,7 @@ public class ProfileFragment extends Fragment {
                 Profile_login.setText(login);
             }
         });
+
 
 
         return fragmentLayout;
