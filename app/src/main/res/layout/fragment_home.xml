@@ -50,275 +50,480 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.778">
 
-        <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        <androidx.cardview.widget.CardView
             android:id="@+id/card_view1"
             android:layout_width="@dimen/card_width"
             android:layout_height="@dimen/card_height"
             android:layout_gravity="center"
             android:layout_margin="@dimen/card_margin"
-            card_view:cardCornerRadius="4dp">
+            app:cardCornerRadius="4dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/info_text11"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:id="@+id/btm11"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@color/colorPrimary"
-                    android:text="Currency"
-                    android:textSize="@dimen/curNameSize"
-                    android:layout_gravity="start"/>
+                    android:gravity="start"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
+                    <TextView
+                        android:id="@+id/info_text11"
+                        android:layout_width="118dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:background="#272525"
+                        android:text="Currency"
+                        android:textColor="#FFFFFF"
+                        android:textSize="@dimen/curNameSize" />
+
+                    <ImageView
+                        android:id="@+id/star11"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#272525"
+                        app:srcCompat="@mipmap/star" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/button3"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:paddingBottom="10dp"
+                    android:text="Button"
+                    app:backgroundTint="#FFFFFF" />
 
                 <TextView
                     android:id="@+id/info_text12"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:background="#272525"
                     android:gravity="center"
-                    android:background="@color/colorPrimary"
-                    android:textSize="18dp"
-                    android:text="Card" />
+                    android:text="Card"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18dp" />
 
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
 
-        <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        <androidx.cardview.widget.CardView
             android:id="@+id/card_view2"
             android:layout_width="@dimen/card_width"
             android:layout_height="@dimen/card_height"
             android:layout_gravity="center"
             android:layout_margin="@dimen/card_margin"
-            card_view:cardCornerRadius="4dp">
+            app:cardCornerRadius="4dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/info_text21"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:id="@+id/btm21"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@color/colorPrimary"
-                    android:text="Currency"
-                    android:textSize="@dimen/curNameSize"
-                    android:layout_gravity="start"/>
+                    android:gravity="start"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
+                    <TextView
+                        android:id="@+id/info_text21"
+                        android:layout_width="118dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:background="#272525"
+                        android:text="Currency"
+                        android:textColor="#FFFFFF"
+                        android:textSize="@dimen/curNameSize" />
+
+                    <ImageView
+                        android:id="@+id/star21"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#272525"
+                        app:srcCompat="@mipmap/star" />
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/button2"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:paddingBottom="10dp"
+                    android:text="Button"
+                    app:backgroundTint="#FFFFFF" />
 
                 <TextView
                     android:id="@+id/info_text22"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:background="#272525"
                     android:gravity="center"
-                    android:background="@color/colorPrimary"
-                    android:textSize="18dp"
-                    android:text="Card" />
+                    android:text="Card"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18dp" />
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        <androidx.cardview.widget.CardView
             android:id="@+id/card_view3"
             android:layout_width="@dimen/card_width"
             android:layout_height="@dimen/card_height"
             android:layout_gravity="center"
             android:layout_margin="@dimen/card_margin"
-            card_view:cardCornerRadius="4dp">
+            app:cardCornerRadius="4dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/info_text31"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:id="@+id/btm31"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@color/colorPrimary"
-                    android:text="Currency"
-                    android:textSize="@dimen/curNameSize"
-                    android:layout_gravity="start"/>
+                    android:gravity="start"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
+                    <TextView
+                        android:id="@+id/info_text31"
+                        android:layout_width="118dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:background="#272525"
+                        android:text="Currency"
+                        android:textColor="#FFFFFF"
+                        android:textSize="@dimen/curNameSize" />
+
+                    <ImageView
+                        android:id="@+id/star31"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#272525"
+                        app:srcCompat="@mipmap/star" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/button"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:paddingBottom="10dp"
+                    android:text="Button"
+                    app:backgroundTint="#FFFFFF" />
 
                 <TextView
                     android:id="@+id/info_text32"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:background="#272525"
                     android:gravity="center"
-                    android:background="@color/colorPrimary"
-                    android:textSize="18dp"
-                    android:text="Card" />
+                    android:text="Card"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18dp" />
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        <androidx.cardview.widget.CardView
             android:id="@+id/card_view4"
             android:layout_width="@dimen/card_width"
             android:layout_height="@dimen/card_height"
             android:layout_gravity="center"
             android:layout_margin="@dimen/card_margin"
-            card_view:cardCornerRadius="4dp">
+            app:cardCornerRadius="4dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/info_text41"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:id="@+id/btm41"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@color/colorPrimary"
-                    android:text="Currency"
-                    android:textSize="@dimen/curNameSize"
-                    android:layout_gravity="start"/>
+                    android:gravity="start"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
+                    <TextView
+                        android:id="@+id/info_text41"
+                        android:layout_width="118dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:background="#272525"
+                        android:text="Currency"
+                        android:textColor="#FFFFFF"
+                        android:textSize="@dimen/curNameSize" />
+
+                    <ImageView
+                        android:id="@+id/star41"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#272525"
+                        app:srcCompat="@mipmap/star" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/button4"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:paddingBottom="10dp"
+                    android:text="Button"
+                    app:backgroundTint="#FFFFFF" />
 
                 <TextView
                     android:id="@+id/info_text42"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:background="#272525"
                     android:gravity="center"
-                    android:background="@color/colorPrimary"
-                    android:textSize="18dp"
-                    android:text="Card" />
+                    android:text="Card"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18dp" />
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        <androidx.cardview.widget.CardView
             android:id="@+id/card_view5"
             android:layout_width="@dimen/card_width"
             android:layout_height="@dimen/card_height"
             android:layout_gravity="center"
             android:layout_margin="@dimen/card_margin"
-            card_view:cardCornerRadius="4dp">
+            app:cardCornerRadius="4dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/info_text51"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:id="@+id/btm51"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@color/colorPrimary"
-                    android:text="Currency"
-                    android:textSize="@dimen/curNameSize"
-                    android:layout_gravity="start"/>
+                    android:gravity="start"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
+                    <TextView
+                        android:id="@+id/info_text51"
+                        android:layout_width="118dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:background="#272525"
+                        android:text="Currency"
+                        android:textColor="#FFFFFF"
+                        android:textSize="@dimen/curNameSize" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#272525"
+                        app:srcCompat="@mipmap/star" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/button5"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:paddingBottom="10dp"
+                    android:text="Button"
+                    app:backgroundTint="#FFFFFF" />
 
                 <TextView
                     android:id="@+id/info_text52"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:background="#272525"
                     android:gravity="center"
-                    android:background="@color/colorPrimary"
-                    android:textSize="18dp"
-                    android:text="Card" />
+                    android:text="Card"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18dp" />
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        <androidx.cardview.widget.CardView
             android:id="@+id/card_view6"
             android:layout_width="@dimen/card_width"
             android:layout_height="@dimen/card_height"
             android:layout_gravity="center"
             android:layout_margin="@dimen/card_margin"
-            card_view:cardCornerRadius="4dp">
+            app:cardCornerRadius="4dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/info_text61"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:id="@+id/btm61"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@color/colorPrimary"
-                    android:text="Currency"
-                    android:textSize="@dimen/curNameSize"
-                    android:layout_gravity="start"/>
+                    android:gravity="start"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
+                    <TextView
+                        android:id="@+id/info_text61"
+                        android:layout_width="118dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:background="#272525"
+                        android:text="Currency"
+                        android:textColor="#FFFBFB"
+                        android:textSize="@dimen/curNameSize" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#272525"
+                        app:srcCompat="@mipmap/star" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/button6"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:paddingBottom="10dp"
+                    android:text="Button"
+                    app:backgroundTint="#FFFFFF" />
 
                 <TextView
                     android:id="@+id/info_text62"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:background="#272525"
                     android:gravity="center"
-                    android:background="@color/colorPrimary"
-                    android:textSize="18dp"
-                    android:text="Card" />
+                    android:text="Card"
+                    android:textColor="#FDFCFC"
+                    android:textSize="18dp" />
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        <androidx.cardview.widget.CardView
             android:id="@+id/card_view7"
             android:layout_width="@dimen/card_width"
             android:layout_height="@dimen/card_height"
             android:layout_gravity="center"
             android:layout_margin="@dimen/card_margin"
-            card_view:cardCornerRadius="4dp">
+            app:cardCornerRadius="4dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/info_text71"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:id="@+id/btm71"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@color/colorPrimary"
-                    android:text="Currency"
-                    android:textSize="@dimen/curNameSize"
-                    android:layout_gravity="start"/>
+                    android:gravity="start"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
+                    <TextView
+                        android:id="@+id/info_text71"
+                        android:layout_width="118dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:background="#272525"
+                        android:text="Currency"
+                        android:textColor="#FDFDFD"
+                        android:textSize="@dimen/curNameSize" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#272525"
+                        app:srcCompat="@mipmap/star" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/button7"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:paddingBottom="10dp"
+                    android:text="Button"
+                    app:backgroundTint="#FFFFFF" />
 
                 <TextView
                     android:id="@+id/info_text72"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:background="#272525"
                     android:gravity="center"
-                    android:background="@color/colorPrimary"
-                    android:textSize="18dp"
-                    android:text="Card" />
+                    android:text="Card"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18dp" />
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        <androidx.cardview.widget.CardView
             android:id="@+id/card_view8"
             android:layout_width="@dimen/card_width"
             android:layout_height="@dimen/card_height"
             android:layout_gravity="center"
             android:layout_margin="@dimen/card_margin"
-            card_view:cardCornerRadius="4dp">
+            app:cardCornerRadius="4dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/info_text81"
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:id="@+id/btm81"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@color/colorPrimary"
-                    android:text="Currency"
-                    android:textSize="@dimen/curNameSize"
-                    android:layout_gravity="start"/>
+                    android:gravity="start"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
+                    <TextView
+                        android:id="@+id/info_text81"
+                        android:layout_width="118dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="start"
+                        android:background="#272525"
+                        android:text="Currency"
+                        android:textColor="#FFFFFF"
+                        android:textSize="@dimen/curNameSize" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#272525"
+                        app:srcCompat="@mipmap/star" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/button8"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:paddingBottom="10dp"
+                    android:text="Button"
+                    app:backgroundTint="#FFFFFF" />
 
                 <TextView
                     android:id="@+id/info_text82"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:background="#272525"
                     android:gravity="center"
-                    android:background="@color/colorPrimary"
-                    android:textSize="18dp"
-                    android:text="Card" />
+                    android:text="Card"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18dp" />
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>

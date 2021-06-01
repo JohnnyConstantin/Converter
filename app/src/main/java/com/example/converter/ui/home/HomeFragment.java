@@ -26,7 +26,6 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.Map;
 import java.util.concurrent.ExecutionException;
 
 
@@ -92,7 +91,7 @@ public class HomeFragment extends Fragment {
                 ((MainActivity) getActivity()).setCurs(allCurs);
             }
 
-            setCurInfo(10, jsonArray, (TextView) view.findViewById(R.id.info_text11), (TextView) view.findViewById(R.id.info_text12));// 10
+            setCurInfo(10, jsonArray, (TextView) view.findViewById(R.id.info_text21), (TextView) view.findViewById(R.id.info_text12));// 10
             setCurInfo(11, jsonArray, (TextView) view.findViewById(R.id.info_text21), (TextView) view.findViewById(R.id.info_text22));// 11
             setCurInfo(0, jsonArray, (TextView) view.findViewById(R.id.info_text31), (TextView) view.findViewById(R.id.info_text32));// 0
             setCurInfo(2, jsonArray, (TextView) view.findViewById(R.id.info_text41), (TextView) view.findViewById(R.id.info_text42));// 2
