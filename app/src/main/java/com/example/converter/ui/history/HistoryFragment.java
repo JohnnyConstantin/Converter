@@ -1,7 +1,6 @@
 package com.example.converter.ui.history;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,9 +9,6 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 import androidx.fragment.app.ListFragment;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.converter.HttpClient;
 import com.example.converter.MainActivity;
@@ -22,10 +18,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
 
@@ -70,7 +63,14 @@ public class HistoryFragment extends ListFragment {
 
         for(int i =0; i<data.length(); i++){
             try {
-                ArrayList<String> myList = new ArrayList<String>(Arrays.asList(data.get(i).toString().split(",")));
+                JSONObject json = new JSONObject(data.get(i).toString());
+                ArrayList<String> myList = new ArrayList<>();
+                myList.add(json.get("currency1").toString());
+                myList.add(json.get("currency2").toString());
+                myList.add(json.get("value1").toString());
+                myList.add(json.get("value2").toString());
+                myList.add(json.get("date").toString());
+                System.out.println(myList.get(0) + "\n");
                 dealings.add(myList);
             } catch (JSONException e) {
                 e.printStackTrace();
@@ -121,12 +121,16 @@ public class HistoryFragment extends ListFragment {
                     false);
 
             TextView dateTextView = (TextView) row.findViewById(R.id.date);
-            TextView currenciesTextView = (TextView) row.findViewById(R.id.currencies);
-            TextView valuesTextView = (TextView) row.findViewById(R.id.values);
+            TextView value1TextView = (TextView) row.findViewById(R.id.currencies);
+            TextView value2TextView = (TextView) row.findViewById(R.id.values);
+//            TextView curr1TextView = (TextView) row.findViewById(R.id.currency1);
+//            TextView curr2TextView = (TextView) row.findViewById(R.id.currency2);
 
-            dateTextView.setText(dealings.get(position).get(0).toString());
-            currenciesTextView.setText(dealings.get(position).get(1).toString());
-            valuesTextView.setText(dealings.get(position).get(2).toString());
+            dateTextView.setText(dealings.get(position).get(4).substring(0,9));
+            value1TextView.setText(dealings.get(position).get(2));
+            value2TextView.setText(dealings.get(position).get(0));
+//            curr1TextView.setText(dealings.get(position).get(0));
+
 
             return row;
         }
