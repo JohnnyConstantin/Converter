@@ -65,8 +65,8 @@ public class HistoryFragment extends ListFragment {
             try {
                 JSONObject json = new JSONObject(data.get(i).toString());
                 ArrayList<String> myList = new ArrayList<>();
-                myList.add(json.get("currency1").toString());
-                myList.add(json.get("currency2").toString());
+                myList.add(json.get("currency1").toString().split("\\(")[0]);
+                myList.add(json.get("currency2").toString().split("\\(")[0]);
                 myList.add(json.get("value1").toString());
                 myList.add(json.get("value2").toString());
                 myList.add(json.get("date").toString());
@@ -121,15 +121,14 @@ public class HistoryFragment extends ListFragment {
                     false);
 
             TextView dateTextView = (TextView) row.findViewById(R.id.date);
-            TextView value1TextView = (TextView) row.findViewById(R.id.currencies);
-            TextView value2TextView = (TextView) row.findViewById(R.id.values);
-//            TextView curr1TextView = (TextView) row.findViewById(R.id.currency1);
-//            TextView curr2TextView = (TextView) row.findViewById(R.id.currency2);
+            TextView currencies = (TextView) row.findViewById(R.id.currencies);
+            TextView values = (TextView) row.findViewById(R.id.values);
 
-            dateTextView.setText(dealings.get(position).get(4).substring(0,9));
-            value1TextView.setText(dealings.get(position).get(2));
-            value2TextView.setText(dealings.get(position).get(0));
-//            curr1TextView.setText(dealings.get(position).get(0));
+            dateTextView.setText(dealings.get(position).get(4).substring(0,10));
+            String curs = dealings.get(position).get(0) + "/" + dealings.get(position).get(1);
+            String vals = dealings.get(position).get(2) + "/" + dealings.get(position).get(3);
+            currencies.setText(curs);
+            values.setText(vals);
 
 
             return row;
