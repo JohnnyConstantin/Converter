@@ -10,7 +10,7 @@
         android:id="@+id/profile_screen"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#6E6E6E"
+        android:background="@color/colorPrimary"
         android:orientation="vertical"
         tools:layout_editor_absoluteX="162dp"
         tools:layout_editor_absoluteY="138dp">
@@ -19,7 +19,7 @@
             android:id="@+id/head"
             android:layout_width="match_parent"
             android:layout_height="80dp"
-            android:background="#32343C"
+            android:background="@color/colorPrimaryDark"
             android:orientation="horizontal">
 
             <TextView
@@ -28,7 +28,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="3"
                 android:gravity="center"
-                android:textColor="@color/colorPrimaryDark"
+                android:textColor="@color/colorAccentText"
                 android:textSize="18sp" />
 
             <ImageView

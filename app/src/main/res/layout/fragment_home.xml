@@ -76,17 +76,18 @@
                         android:layout_width="118dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="start"
-                        android:background="#272525"
+                        android:background="@color/white"
                         android:text="Currency"
-                        android:textColor="#FFFFFF"
+                        android:textColor="@color/colorAccentText"
                         android:textSize="@dimen/curNameSize" />
 
                     <ImageView
                         android:id="@+id/star11"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="#272525"
-                        app:srcCompat="@mipmap/star" />
+                        android:background="@color/white"
+                        app:srcCompat="@drawable/ic_star"
+                        tools:ignore="VectorDrawableCompat" />
                 </LinearLayout>
 
                 <Button
@@ -95,16 +96,16 @@
                     android:layout_height="2dp"
                     android:paddingBottom="10dp"
                     android:text="Button"
-                    app:backgroundTint="#FFFFFF" />
+                    app:backgroundTint="@color/colorAccentText" />
 
                 <TextView
                     android:id="@+id/info_text12"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="#272525"
+                    android:background="@color/white"
                     android:gravity="center"
                     android:text="Card"
-                    android:textColor="#FFFFFF"
+                    android:textColor="@color/colorAccentText"
                     android:textSize="18dp" />
 
             </LinearLayout>
@@ -137,17 +138,18 @@
                         android:layout_width="118dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="start"
-                        android:background="#272525"
+                        android:background="@color/white"
                         android:text="Currency"
-                        android:textColor="#FFFFFF"
+                        android:textColor="@color/colorAccentText"
                         android:textSize="@dimen/curNameSize" />
 
                     <ImageView
                         android:id="@+id/star21"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="#272525"
-                        app:srcCompat="@mipmap/star" />
+                        android:background="@color/white"
+                        app:srcCompat="@drawable/ic_star"
+                        tools:ignore="VectorDrawableCompat" />
 
                 </LinearLayout>
 
@@ -157,16 +159,16 @@
                     android:layout_height="2dp"
                     android:paddingBottom="10dp"
                     android:text="Button"
-                    app:backgroundTint="#FFFFFF" />
+                    app:backgroundTint="@color/colorAccentText" />
 
                 <TextView
                     android:id="@+id/info_text22"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="#272525"
+                    android:background="@color/white"
                     android:gravity="center"
                     android:text="Card"
-                    android:textColor="#FFFFFF"
+                    android:textColor="@color/colorAccentText"
                     android:textSize="18dp" />
 
             </LinearLayout>
@@ -198,17 +200,18 @@
                         android:layout_width="118dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="start"
-                        android:background="#272525"
+                        android:background="@color/white"
                         android:text="Currency"
-                        android:textColor="#FFFFFF"
+                        android:textColor="@color/colorAccentText"
                         android:textSize="@dimen/curNameSize" />
 
                     <ImageView
                         android:id="@+id/star31"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="#272525"
-                        app:srcCompat="@mipmap/star" />
+                        android:background="@color/white"
+                        app:srcCompat="@drawable/ic_star"
+                        tools:ignore="VectorDrawableCompat" />
                 </LinearLayout>
 
                 <Button
@@ -217,16 +220,16 @@
                     android:layout_height="2dp"
                     android:paddingBottom="10dp"
                     android:text="Button"
-                    app:backgroundTint="#FFFFFF" />
+                    app:backgroundTint="@color/colorAccentText" />
 
                 <TextView
                     android:id="@+id/info_text32"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="#272525"
+                    android:background="@color/white"
                     android:gravity="center"
                     android:text="Card"
-                    android:textColor="#FFFFFF"
+                    android:textColor="@color/colorAccentText"
                     android:textSize="18dp" />
 
             </LinearLayout>
@@ -258,17 +261,18 @@
                         android:layout_width="118dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="start"
-                        android:background="#272525"
+                        android:background="@color/white"
                         android:text="Currency"
-                        android:textColor="#FFFFFF"
+                        android:textColor="@color/colorAccentText"
                         android:textSize="@dimen/curNameSize" />
 
                     <ImageView
                         android:id="@+id/star41"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="#272525"
-                        app:srcCompat="@mipmap/star" />
+                        android:background="@color/white"
+                        app:srcCompat="@drawable/ic_star"
+                        tools:ignore="VectorDrawableCompat" />
                 </LinearLayout>
 
                 <Button
@@ -277,16 +281,16 @@
                     android:layout_height="2dp"
                     android:paddingBottom="10dp"
                     android:text="Button"
-                    app:backgroundTint="#FFFFFF" />
+                    app:backgroundTint="@color/colorAccentText" />
 
                 <TextView
                     android:id="@+id/info_text42"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="#272525"
+                    android:background="@color/white"
                     android:gravity="center"
                     android:text="Card"
-                    android:textColor="#FFFFFF"
+                    android:textColor="@color/colorAccentText"
                     android:textSize="18dp" />
 
             </LinearLayout>
@@ -318,16 +322,17 @@
                         android:layout_width="118dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="start"
-                        android:background="#272525"
+                        android:background="@color/white"
                         android:text="Currency"
-                        android:textColor="#FFFFFF"
+                        android:textColor="@color/colorAccentText"
                         android:textSize="@dimen/curNameSize" />
 
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="#272525"
-                        app:srcCompat="@mipmap/star" />
+                        android:background="@color/white"
+                        app:srcCompat="@drawable/ic_star"
+                        tools:ignore="VectorDrawableCompat" />
                 </LinearLayout>
 
                 <Button
@@ -336,16 +341,16 @@
                     android:layout_height="2dp"
                     android:paddingBottom="10dp"
                     android:text="Button"
-                    app:backgroundTint="#FFFFFF" />
+                    app:backgroundTint="@color/colorAccentText" />
 
                 <TextView
                     android:id="@+id/info_text52"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="#272525"
+                    android:background="@color/white"
                     android:gravity="center"
                     android:text="Card"
-                    android:textColor="#FFFFFF"
+                    android:textColor="@color/colorAccentText"
                     android:textSize="18dp" />
 
             </LinearLayout>
@@ -377,16 +382,17 @@
                         android:layout_width="118dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="start"
-                        android:background="#272525"
+                        android:background="@color/white"
                         android:text="Currency"
-                        android:textColor="#FFFBFB"
+                        android:textColor="@color/colorAccentText"
                         android:textSize="@dimen/curNameSize" />
 
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="#272525"
-                        app:srcCompat="@mipmap/star" />
+                        android:background="@color/white"
+                        app:srcCompat="@drawable/ic_star"
+                        tools:ignore="VectorDrawableCompat" />
                 </LinearLayout>
 
                 <Button
@@ -395,16 +401,16 @@
                     android:layout_height="2dp"
                     android:paddingBottom="10dp"
                     android:text="Button"
-                    app:backgroundTint="#FFFFFF" />
+                    app:backgroundTint="@color/colorAccentText" />
 
                 <TextView
                     android:id="@+id/info_text62"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="#272525"
+                    android:background="@color/white"
                     android:gravity="center"
                     android:text="Card"
-                    android:textColor="#FDFCFC"
+                    android:textColor="@color/colorAccentText"
                     android:textSize="18dp" />
 
             </LinearLayout>
@@ -436,16 +442,17 @@
                         android:layout_width="118dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="start"
-                        android:background="#272525"
+                        android:background="@color/white"
                         android:text="Currency"
-                        android:textColor="#FDFDFD"
+                        android:textColor="@color/colorAccentText"
                         android:textSize="@dimen/curNameSize" />
 
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="#272525"
-                        app:srcCompat="@mipmap/star" />
+                        android:background="@color/white"
+                        app:srcCompat="@drawable/ic_star"
+                        tools:ignore="VectorDrawableCompat" />
                 </LinearLayout>
 
                 <Button
@@ -454,16 +461,16 @@
                     android:layout_height="2dp"
                     android:paddingBottom="10dp"
                     android:text="Button"
-                    app:backgroundTint="#FFFFFF" />
+                    app:backgroundTint="@color/colorAccentText" />
 
                 <TextView
                     android:id="@+id/info_text72"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="#272525"
+                    android:background="@color/white"
                     android:gravity="center"
                     android:text="Card"
-                    android:textColor="#FFFFFF"
+                    android:textColor="@color/colorAccentText"
                     android:textSize="18dp" />
 
             </LinearLayout>
@@ -495,16 +502,17 @@
                         android:layout_width="118dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="start"
-                        android:background="#272525"
+                        android:background="@color/white"
                         android:text="Currency"
-                        android:textColor="#FFFFFF"
+                        android:textColor="@color/colorAccentText"
                         android:textSize="@dimen/curNameSize" />
 
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="#272525"
-                        app:srcCompat="@mipmap/star" />
+                        android:background="@color/white"
+                        app:srcCompat="@drawable/ic_star"
+                        tools:ignore="VectorDrawableCompat" />
                 </LinearLayout>
 
                 <Button
@@ -513,16 +521,16 @@
                     android:layout_height="2dp"
                     android:paddingBottom="10dp"
                     android:text="Button"
-                    app:backgroundTint="#FFFFFF" />
+                    app:backgroundTint="@color/colorAccentText" />
 
                 <TextView
                     android:id="@+id/info_text82"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="#272525"
+                    android:background="@color/white"
                     android:gravity="center"
                     android:text="Card"
-                    android:textColor="#FFFFFF"
+                    android:textColor="@color/colorAccentText"
                     android:textSize="18dp" />
 
             </LinearLayout>

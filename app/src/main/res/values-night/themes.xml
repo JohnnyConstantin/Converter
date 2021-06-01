@@ -1,16 +1,18 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Theme.Converter" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
-        <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_200</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
-        <item name="colorOnPrimary">@color/black</item>
-        <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_200</item>
-        <item name="colorOnSecondary">@color/black</item>
-        <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
-    </style>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- need to clean up -->
+<resources>
+
+
+
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="colorAccentText">#1F2526</color>
+    <color name="colorPrimary">#60BF89</color>
+    <color name="colorPrimaryDark">#4A8C67</color>
+    <color name="colorAccent">#6AD99A</color>
+
+
+    <color name="colorSecondary">#60BF89</color>
+    <color name="colorSecondaryVariant">#FF018786</color>
 </resources>

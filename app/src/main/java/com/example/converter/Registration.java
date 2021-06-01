@@ -1,5 +1,6 @@
 package com.example.converter;
 
+import android.app.Activity;
 import android.graphics.drawable.Drawable;
 
 import java.io.IOException;
@@ -23,7 +24,7 @@ import com.google.android.material.textfield.TextInputLayout;
  * @author J.C
  */
 
-public class Registration extends AppCompatActivity {
+public class Registration extends Activity {
     /**Data entry fields during registration*/
     TextInputLayout email_lay, confirm_lay, password_lay;
     TextInputEditText email_text,confirm_text,password_text;

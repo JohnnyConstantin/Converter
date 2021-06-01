@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- need to clean up -->
 <resources>
-    <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
-    <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
+
+
 
     <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="white">#F2F2F2</color>
 
-    <color name="colorAccentText">#000000</color>
-    <color name="colorPrimary">#6200EE</color>
-    <color name="colorPrimaryDark">#3700B3</color>
-    <color name="colorAccent">#03DAC5</color>
+    <color name="colorAccentText">#1F2526</color>
+    <color name="colorPrimary">#60BF89</color>
+    <color name="colorPrimaryDark">#D03D8E60</color>
+<!--    4A8C67-->
+    <color name="colorAccent">#6AD99A</color>
+
+
+    <color name="colorSecondary">#A5B8A5</color>
+    <color name="colorSecondaryVariant">#FF018786</color>
 </resources>

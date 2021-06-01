@@ -29,14 +29,6 @@ import java.util.concurrent.ExecutionException;
 public class HistoryFragment extends ListFragment {
 
     final ArrayList<ArrayList<String>> dealings = new ArrayList<ArrayList<String>>();
-    //        dealings.add(new ArrayList<String>());
-    //        dealings.get(0).add("2021-02-25");
-    //        dealings.get(0).add("USDT/RUB");
-    //        dealings.get(0).add("10/754");
-    //        dealings.add(new ArrayList<String>());
-    //        dealings.get(1).add("2021-02-25");
-    //        dealings.get(1).add("USDT/RUB");
-    //        dealings.get(1).add("1000/75400");
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
