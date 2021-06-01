@@ -22,7 +22,10 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
 
@@ -32,7 +35,7 @@ import java.util.concurrent.ExecutionException;
  */
 public class HistoryFragment extends ListFragment {
 
-    final ArrayList<ArrayList<String>> dealings = new ArrayList<>();
+    final ArrayList<ArrayList<String>> dealings = new ArrayList<ArrayList<String>>();
     //        dealings.add(new ArrayList<String>());
     //        dealings.get(0).add("2021-02-25");
     //        dealings.get(0).add("USDT/RUB");
@@ -50,38 +53,50 @@ public class HistoryFragment extends ListFragment {
         String login = m.getLogin();
         String userId = m.getUserId();
 
+        JSONArray data = null;
+
+        try {
+            data = new JSONArray(getHistory(userId));
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+
+        System.out.println(data);
+
+        for(int i =0; i<data.length(); i++){
+            try {
+                ArrayList<String> myList = new ArrayList<String>(Arrays.asList(data.get(i).toString().split(",")));
+                dealings.add(myList);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+
 
         MyListAdapter myListAdapter = new MyListAdapter(getActivity(),
                 R.layout.listfragment_row, dealings);
         setListAdapter(myListAdapter);
 
-        JSONArray data = null;
 
-        try {
-            data = new JSONArray(getHistory(userId));
-        } catch (ExecutionException | JSONException e) {
-            e.printStackTrace();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
 
-        try {
-            myListAdapter.;
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
 
-        try {
-            JSONObject json = new JSONObject(data.get(0).toString());
-            String id = json.get("user_id").toString();
-            String from = json.get("currency1").toString();
-            String to = json.get("currency2").toString();
 
-            System.out.println(id+'\n'+from+'\n'+to);
-
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            JSONObject json = new JSONObject(data.get(0).toString());
+//            String id = json.get("user_id").toString();
+//            String from = json.get("currency1").toString();
+//            String to = json.get("currency2").toString();
+//
+//            System.out.println(id+'\n'+from+'\n'+to);
+//
+//        } catch (JSONException e) {
+//            e.printStackTrace();
+//        }
 
     }
 
@@ -109,9 +124,9 @@ public class HistoryFragment extends ListFragment {
             TextView currenciesTextView = (TextView) row.findViewById(R.id.currencies);
             TextView valuesTextView = (TextView) row.findViewById(R.id.values);
 
-            dateTextView.setText(dealings.get(position).get(0));
-            currenciesTextView.setText(dealings.get(position).get(1));
-            valuesTextView.setText(dealings.get(position).get(2));
+            dateTextView.setText(dealings.get(position).get(0).toString());
+            currenciesTextView.setText(dealings.get(position).get(1).toString());
+            valuesTextView.setText(dealings.get(position).get(2).toString());
 
             return row;
         }
